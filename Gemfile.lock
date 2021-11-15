@@ -17,6 +17,7 @@ GEM
     htmlbeautifier (1.3.1)
     htmlcompressor (0.4.0)
     http_parser.rb (0.6.0)
+    jekyll-toc
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jekyll (4.0.1)
