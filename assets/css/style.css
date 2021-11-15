@@ -37,8 +37,8 @@ html[data-theme="dark"] {
     }
 
     html[data-theme="light"] {
-	    --bg-main: #FFFFFF;
-        --bg-sub: #FAFAFC;
+	    --bg-main: #F4ECD8;
+        --bg-sub: #C1BAAA;
         --text-main: #18181C;
         --text-sub: #5D5D67;
         --link: #2380ED;
@@ -1475,7 +1475,9 @@ label.srs-toggle {
 }
 
 
-
+.box {
+    width: 80% !important;
+}
 @media screen and (max-width: 800px){
 
 .box {
