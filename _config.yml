@@ -28,7 +28,7 @@ url: "https://jekyll-garden.github.io/" # the base hostname & protocol for your 
 # your social media links etc
 #######################################################################
 
-heading: G7 di Fisciano # Change this 
+heading: G7 di Fisciano
 copyright:  
   year: 2021
   msg: Copyright lololol # This is a mandatory attribute for copyright to be displayed ; If deleting this, edit at footer layout.
@@ -77,9 +77,9 @@ preferences:
     related: 
       enabled: true
   flashcards:
-    enabled: true #Not supported in NotesGadern theme
+    enabled: true
   homepage: 
-    enabled: true ##If you need a homepage, change this to true and edit _includes/Homepage.html
+    enabled: false
 
 encoding: utf-8
 
