@@ -42,7 +42,7 @@ copyright:
 #####################################################################
 preferences:
   search:
-    enabled: true
+    enabled: false
     shortcut_hint: 
         enabled: true
   wiki_style_link: # This property handles wiki style links '[['
@@ -67,7 +67,7 @@ preferences:
   wrapping:
     enabled: true
   contextmenu:
-    enabled: false #Not supported in NotesGadern theme
+    enabled: true #Not supported in NotesGadern theme
     copylink: 
       enabled: false
     newtab: 
@@ -79,7 +79,7 @@ preferences:
   flashcards:
     enabled: false #Not supported in NotesGadern theme
   homepage: 
-    enabled: true ##If you need a homepage, change this to true and edit _includes/Homepage.html
+    enabled: false ##If you need a homepage, change this to true and edit _includes/Homepage.html
 
 encoding: utf-8
 
@@ -93,7 +93,7 @@ plugins:
 ## Enable _notes Collection 
 collections:
     notes:
-      output: true
+      output: false
       permalink: /notes/:title      
 # Disqus Comments
 disqus:
