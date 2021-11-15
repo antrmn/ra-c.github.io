@@ -49,7 +49,7 @@
             <h4>{{ note_items.title }}</h4>
             <div class="content">
                 <p style="margin: 0px;">
-                    {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | escape | truncate: 260 }}
+                    {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | escape | truncate: 260 | toc}}
                 </p>
             </div>
         </a>
