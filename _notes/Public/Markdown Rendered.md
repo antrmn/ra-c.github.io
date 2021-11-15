@@ -167,7 +167,7 @@ From URL
 
 From Assets/Img
 
-![Alt Text](/assets/img/1-how-to.png "Title Here")
+![Image not found: /assets/img/1-how-to.png](/assets/img/1-how-to.png "Image not found: /assets/img/1-how-to.png")
 
 From URL 
 
