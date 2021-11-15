@@ -151,8 +151,8 @@
             {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
         {%- endfor -%}
 
-        {{ replaced_content | toc }}
+        {{ replaced_content }}
     {%- else -%}
-        {{ content | toc }}
+        {{ content }}
     {%- endif -%}
 </div>
