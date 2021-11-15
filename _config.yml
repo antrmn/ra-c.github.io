@@ -28,10 +28,10 @@ url: "https://jekyll-garden.github.io/" # the base hostname & protocol for your 
 # your social media links etc
 #######################################################################
 
-heading: Digital Garden # Change this 
+heading: G7 di Fisciano # Change this 
 copyright:  
   year: 2021
-  msg: Your Name # This is a mandatory attribute for copyright to be displayed ; If deleting this, edit at footer layout.
+  msg: Copyright lololol # This is a mandatory attribute for copyright to be displayed ; If deleting this, edit at footer layout.
 
 
 #####################################################################
@@ -71,15 +71,15 @@ preferences:
     copylink: 
       enabled: false
     newtab: 
-      enabled: false
+      enabled: true
     backlinks: 
-      enabled: false
+      enabled: true
     related: 
-      enabled: false
+      enabled: true
   flashcards:
-    enabled: false #Not supported in NotesGadern theme
+    enabled: true #Not supported in NotesGadern theme
   homepage: 
-    enabled: false ##If you need a homepage, change this to true and edit _includes/Homepage.html
+    enabled: true ##If you need a homepage, change this to true and edit _includes/Homepage.html
 
 encoding: utf-8
 
@@ -93,7 +93,7 @@ plugins:
 ## Enable _notes Collection 
 collections:
     notes:
-      output: false
+      output: true
       permalink: /notes/:title      
 # Disqus Comments
 disqus:
