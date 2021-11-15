@@ -90,7 +90,7 @@ main {
 }
 
 .buttons.for-back-home:not(:last-child) {
-    margin-left: 0;
+    margin-left: 0rem;
     margin-bottom: 1rem;
 }
 
@@ -101,7 +101,7 @@ main {
 
 @media screen and (min-width: 768px) {
     .buttons.for-back-home:not(:last-child) {
-        margin-left: 2rem;
+        margin-left: 0rem;
     } 
 }
 
