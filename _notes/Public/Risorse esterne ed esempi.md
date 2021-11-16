@@ -1,0 +1,1 @@
+* [Pagina del corso di un'università random, con slide ed esempi](http://www.dcs.glasgow.ac.uk/~simon/teaching/MechEngSE3/)
