@@ -9,7 +9,7 @@ html, html[data-theme="light"] {
     --bg-main: #F4ECD8;
         --bg-sub: #E1DBCD;
     --color-bis: #363636;
-    --text-main: #18181C;
+    --text-main: #5B4636;
     --text-sub: #5D5D67;
     --link: #2380ED;
     --border: #E5E5E5;
@@ -39,7 +39,7 @@ html[data-theme="dark"] {
     html[data-theme="light"] {
 	    --bg-main: #F4ECD8;
         --bg-sub: #E1DBCD;
-        --text-main: #18181C;
+        --text-main: #5B4636;
         --text-sub: #5D5D67;
         --link: #2380ED;
         --border: #E5E5E5;
