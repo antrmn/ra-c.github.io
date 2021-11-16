@@ -7,10 +7,13 @@ toc: true
 
 [[is]] Ingegneria del software
 
+[wee](is.md)
+
+[i[]()s](Ing[]()e[]()gneria del software)
 [[Ingegneria del software]]
 
-
-{:toc}
+* TOC
+{ :toc }
 
 # Introduzione
 

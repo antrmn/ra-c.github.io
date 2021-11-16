@@ -224,11 +224,11 @@ But let's throw in a <b>tag</b>.
 ### Math expressions
 ---
 
-You can write math expressions using the $$\LateX$$ [markup language](https://en.wikipedia.org/wiki/LaTeX) between double dollar signs : \$$...$$. They can be written inline or as a single block.
+You can write math expressions using the $$\LateX$$ [markup language](https://en.wikipedia.org/wiki/LaTeX) between double dollar signs : \$$...$$. They can be written inline or as a single block
 
 For example,
 
-\$$P(A|B) = \frac{P(B | A)\cdot P(A)}{P(B)}$$ will render as :
+$$P(A|B) = \frac{P(B | A)\cdot P(A)}{P(B)}$$ will render as :
 
 $$P(A|B) = \frac{P(B | A)\cdot P(A)}{P(B)}$$
 
