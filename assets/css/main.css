@@ -6,7 +6,7 @@
     transform: rotate(359deg); } }
 
 #myBtn {
-        color: var(--text-main),
+        color: var(--text-main);
         position: fixed;
         bottom: 10px;
         float: right;
