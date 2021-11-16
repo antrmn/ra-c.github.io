@@ -8,12 +8,12 @@
 #myBtn {
         color: var(--text-main);
         position: fixed;
-        bottom: 10px;
+        bottom: 2.5%;
         float: right;
-        right: 18.5%;
-        left: 77.25%;
+        right: 2.5%;
         max-width: 30px;
-        font-size: 12px;
+        font-size: 20px;
+        z-index: 999;
 }
 
 .delete, .is-unselectable, .button {
