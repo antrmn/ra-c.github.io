@@ -3887,7 +3887,7 @@ a.navbar-item,
 @media screen and (min-width: 769px), print {
   .section.is-note .column.is-primary-content,
     .note-page-section {
-      padding: 2rem 0rem 2rem 3.5rem; } 
+      padding: 2rem 1.5rem 2rem 3.5rem; } 
   .note-cards .content {
     width: 88%; }
     }
