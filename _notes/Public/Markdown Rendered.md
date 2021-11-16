@@ -230,9 +230,9 @@ You can write math expressions using the $$\LateX$$ [markup language](https://en
 
 For example,
 
-$$P(A|B) = \frac{P(B | A)\cdot P(A)}{P(B)}$$ will render as :
+$$P(A|B) = \frac{P(B  A)\cdot P(A)}{P(B)}$$ will render as :
 
-$$P(A|B) = \frac{P(B | A)\cdot P(A)}{P(B)}$$
+$$P(A|B) = \frac{P(B A)\cdot P(A)}{P(B)}$$
 
 Please note that for a math block to be displayed correctly, it needs to be separated by an empty line, above and below. Besides, the pipe character | may conflict with markdown : it is recommended to use \vert instead.
 
