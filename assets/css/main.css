@@ -5,6 +5,17 @@
   to {
     transform: rotate(359deg); } }
 
+#myBtn {
+        color: var(--text-main),
+        position: fixed;
+        bottom: 10px;
+        float: right;
+        right: 18.5%;
+        left: 77.25%;
+        max-width: 30px;
+        font-size: 12px;
+}
+
 .delete, .is-unselectable, .button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
