@@ -1204,8 +1204,6 @@ a.box-feed:active {
 .content sub {
   font-size: 75%; }
 
-.content table {
-  width: 100%; }
   .content table td,
   .content table th {
     border: 1px solid var(--border);
