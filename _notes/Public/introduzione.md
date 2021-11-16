@@ -12,12 +12,12 @@ toc: true
 [i[]()s](Ing[]()e[]()gneria del software)
 [[Ingegneria del software]]
 
-* TOC
-{ :toc }
+* TOC  
+{:toc}
 
 
 
-![](../../assets/img/albero.png)
+![](../..//assets/img/albero.png)
 
 # Introduzione
 
