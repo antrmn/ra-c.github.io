@@ -6,8 +6,8 @@ layout: Stylesheet
 /* Containers: Body, Container, Box, Main, Header, Content */ 
 
 html, html[data-theme="light"] {
-    --bg-main: #FFFFFF;
-    --bg-sub: #FAFAFC;
+    --bg-main: #F4ECD8;
+        --bg-sub: #E1DBCD;
     --color-bis: #363636;
     --text-main: #18181C;
     --text-sub: #5D5D67;
@@ -38,7 +38,7 @@ html[data-theme="dark"] {
 
     html[data-theme="light"] {
 	    --bg-main: #F4ECD8;
-        --bg-sub: #C1BAAA;
+        --bg-sub: #E1DBCD;
         --text-main: #18181C;
         --text-sub: #5D5D67;
         --link: #2380ED;
