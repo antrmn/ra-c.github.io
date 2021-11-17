@@ -42,7 +42,7 @@ copyright:
 #####################################################################
 preferences:
   search:
-    enabled: false
+    enabled: true
     shortcut_hint: 
         enabled: true
   wiki_style_link: # This property handles wiki style links '[['
