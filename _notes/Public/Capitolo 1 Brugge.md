@@ -1,25 +1,13 @@
 ---
-title : Introduzione
-notetype : unfeed
-date : 01-02-2021
-toc: true
+title : Capitolo 1 Brugge
+notetype : feed
+date : 01-10-2021
 ---
-
-[[is]] Ingegneria del software
-
-[wee](is.md)
-
-[i[]()s](Ing[]()e[]()gneria del software)
-[[Ingegneria del software]]
 
 * TOC  
 {:toc}
 
-
-
-![](../..//assets/img/albero.png)
-
-# Introduzione
+# Introduzione (Libro)
 
 L'enfasi in "ingegneria del software" sta in entrambe le parole *ingegneria* e *software*. Un ingegnere è capace di costruire un prodotto di alta qualità usando componenti già pronti per l'uso e integrandoli in tempo e rispettando il budget. L'ingegnere si trova spesso ad affrontare problemi mal definiti e soluzioni parziali, e deve affidarsi a metodi empirici per valutare soluzioni. Ingegneri che lavorano in campi come costruzione di ponti o progettazione di velivoli hanno affrontato con successo tali sfide. Gli ingegneri del software non hanno avuto lo stesso esito positivo.  
 

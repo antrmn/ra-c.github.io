@@ -1,3 +1,9 @@
+---
+title : Informazioni sul corso
+notetype : feed
+date : 01-10-2021
+---
+
 # Informazioni sul corso
 [Syllabus del corso](https://corsi.unisa.it/informatica/didattica/insegnamenti?anno=2021&id=507546&cId=9999-2017&pId=MODULO_3*RESTO_2*S1)
 
