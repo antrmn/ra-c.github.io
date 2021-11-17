@@ -1,6 +1,6 @@
 ---
 title : Risorse esterne ed esempi
-notetype : feed
+notetype : unfeed
 date : 17-11-2021
 ---
 

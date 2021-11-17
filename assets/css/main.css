@@ -2973,7 +2973,7 @@ a.navbar-item,
       width: 40%; }
     .column.is-three-fifths, .column.is-three-fifths-tablet {
       flex: none;
-      width: 90%; }
+      width: 70%; }
     .column.is-four-fifths, .column.is-four-fifths-tablet {
       flex: none;
       width: 80%; }

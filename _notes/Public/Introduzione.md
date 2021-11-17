@@ -1,8 +1,11 @@
 ---
 title : Introduzione
-notetype : feed
+notetype : unfeed
 date : 17-11-2021
 ---
+
+* TOC  
+{:toc}
 
 # Riferimenti
 * [*IEEE Standard Glossary of Software Engineering Terminology, 1993 (IEEE Std 610.12-1990)*](http://www.informatik.htw-dresden.de/~hauptman/SEI/IEEE_Standard_Glossary_of_Software_Engineering_Terminology%20.pdf)

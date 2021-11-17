@@ -1,6 +1,6 @@
 ---
 title : Capitolo 1 Brugge
-notetype : feed
+notetype : unfeed
 date : 01-10-2021
 ---
 
