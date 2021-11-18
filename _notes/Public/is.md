@@ -9,5 +9,5 @@ date : 01-02-2021
 
 ## Introduzione
 * **Lezione del 30 settembre 2021**: [[Introduzione]]
-  + Riassunto del primo capitolo del Brugge: [[Capitolo 1 Brugge]]
+  + Riassunto del primo capitolo del Brugge: [[Capitolo 1 Bruegge]]
 

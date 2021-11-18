@@ -1,5 +1,5 @@
 ---
-title : Capitolo 1 Brugge
+title : Capitolo 1 Bruegge
 notetype : unfeed
 date : 01-10-2021
 ---
@@ -121,7 +121,7 @@ Un *progetto*, il cui scopo è quello di sviluppare un sistema software, è comp
 
 Una rappresentazione grafica è mostrata in figura:  
 
-% [ figure 1-1 pag 10]
+![](../../assets/img//bfig1-1.png)
 
 ### Partecipanti e ruoli
 
@@ -130,8 +130,9 @@ Un ruolo è associato ad un insieme di **task** ed è assegnato ad un partecipan
 
 Consideriamo come esempio il sistema di un distributore di biglietti:  
 
-% [ pag 11 esempio ]
-% [ pag 12 tabella 1-1]
+> *TicketDistributor is a machine that distributes tickets for trains. Travelers have the option of selecting a ticket for a single trip or for multiple trips, or selecting a time card for a day or a week. The TicketDistributor computes the price of the requested ticket based on the area in which the trip will take place and whether the traveler is a child or an adult. The TicketDistributor must be able to handle several exceptions, such as travelers who do not complete the transaction, travelers who attempt to pay with large billd, and resource outages, such as running out of tickets, change or power.*
+
+![Image not found: ../../assets/img//btab1-1.png](../../assets/img//btab1-1.png "Image not found: ../../assets/img//btab1-1.png")
 
 ### Sistemi e modelli
 
@@ -151,7 +152,7 @@ I deliverable sono solitamente definiti prima dell'inizio del progetto e sono sp
 ### Attività, task e risorse  
 
 Un'**attività** è un insieme di task eseguiti per uno scopo specifico.  
-Ad esempio, la raccolta dei requisiti è un'attività il cui scopo è definire col cliente cosa dovrà fare il sistema. La consegna è un'attività il cui scopo è installare il sistema in una posizione operativa. La gestione (*management*) è una attività il cui scopo è monitorare e controllare il progetto in modo tale che questo vengano rispettati gli obiettivi imposti (deadline, budget, qualità..).  [^1]
+Ad esempio, la raccolta dei requisiti è un'attività il cui scopo è definire col cliente cosa dovrà fare il sistema. La consegna è un'attività il cui scopo è installare il sistema in una posizione operativa. La gestione (*management*) è una attività il cui scopo è monitorare e controllare il progetto in modo tale che questo vengano rispettati gli obiettivi imposti (deadline, budget, qualità..).
 
 Le attività possono essere composte da altre attività. L'attività di consegna include l'attività di installazione software e quella di formazione degli operatori. Le attività sono talvolta chiamate **fasi**.  
 
@@ -159,7 +160,7 @@ Un **task** rappresenta un'unità di lavoro atomica che può essere gestita: un 
 
 Le **risorse** sono usate per svolgere un lavoro. Le risorse includono tempo, equipaggiamento e lavoro. Quando si pianifica un progetto, un manager decompone il lavoro in task e li assegna alle risorse.  
 
-% [ pag 14  1-3 ]
+![](../../assets/img//btab1-3.png)
 
 ### Requisiti funzionali e non funzionali
 
@@ -205,15 +206,12 @@ Le attività di sviluppo includono:
 
 La seguente figura fornisce una panoramica delle relazioni che occorrono tra queste attività e i loro prodotti.  
 
-% [ pag 16 1-2 ]
+![](../../assets/img//bfig1-2.png)
 
 ### Raccolta dei requisiti
 
 Durante la raccolta dei requisiti, il committente e gli sviluppatori definiscono lo scopo del sistema. Il risultato di questa attività è una descrizione del sistema in termini di **attori** e **casi d'uso**. Gli attori rappresentano le entità esterne che interagiscono col sistema e possono includere ruoli come utenti finali, altri computer (e.g. il computer centrale di una banca o una rete) e l'ambiente circostante. I casi d'uso sono sequenze generali di eventi che secrivono tutte le possibili azioni tra gli attori e il sistema per un dato pezzo di funzionalità.  
 
-Il seguente è un esempio di use case:  
-
-% [ pag 18 fig 1-3]
 
 ### Analisi
 
@@ -222,21 +220,11 @@ Gli sviluppatori trasformano i casi d'uso prodotti nell'attività di raccolta de
 
 Il risultato delle analisi è un modello del sistema annotato con attributi, operazioni e associazioni. La figura sottostante presenta un esempio di modello dinamico per il distributore dei ticket.  
 
-% [ pag 18 1-4 ]
-
-La figura sottostante mostra un esempio di object model per il distribuore di ticket  
-
-% [ pag 18 1-5 ]
-
 ### System design
 
 Durante la fase di system design, gli sviluppatori definiscono gli obiettivi di progettazione e decompongono il sistema in sottosistemi più piccoli che possono essere realizati da team individuali. Gli sviluppatori possono anche selezionare strategie per costruire il sistema, come la piattaforma hardware o software sul quale il sistema girerà, la strategia per la gestione dei dati peristenti, il flusso di controllo globale, le politiche per il controllo degli accessi. Il risultato del system design è una chiara descrizione di ognuna di queste strategie, una decomposizione in sottosistemi e un *deployment diagram* che rappresenta i mapping hardware/software del sistema.  
 
 Dato che l'analisi e il system design producono entrambi modelli del sistema ancora in fase di costruzione, va specificato che solamente l'analisi si occupa di entità comprensibili dal committente, a differenza del system design. Il system design include un modello molto più raffinato che inclde entità che vanno oltre la comprensione e/o l'interesse del committente.  
-
-Ecco un esempio di decomposizione in sottosistemi:  
-
-%[fig 1-6 pag 20 ] 
 
 ### Object design
 
