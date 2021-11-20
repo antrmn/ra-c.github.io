@@ -177,7 +177,7 @@ Dopo la fase di utilizzo del prototipo si passa alla produzione della versione d
 * **Prototipazione "*throw-away*"**: si mira ad una migliore comprensione dei requisiti del prodotto da sviluppare
   + Lo sviluppo dovrebbe avviarsi con la parte dei requisiti meno compresa
   + In questo caso il prototipo è uno strumento di identificazione dei requisiti utente; è incompleto, approssimativo, realizzato utilizzando parti già possedute
-  + Il prototipo **deve essere gettato**
+  + Il prototipo **deve essere gettato**  
     ![](../../assets/img//prototype.png)
 * **Prototipazione "*esplorativa*"**: si mira alla produzione del prodotto finale partendo da una descrizione di massima e lavorando a stretto contatto con il committente
   + Lo sviluppo dovrebbe avviarsi con la parte dei requisiti meglio compresa
