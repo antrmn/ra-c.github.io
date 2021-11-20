@@ -9,6 +9,7 @@ date : 17-11-2021
 * [SWE Body of Knowledge](https://cs.fit.edu/~kgallagher/Schtick/Serious/SWEBOKv3.pdf)
   + Menzionato alla fine delle slide di introduzione
 * [Pagina del corso di un'università random, con slide ed esempi](http://www.dcs.glasgow.ac.uk/~simon/teaching/MechEngSE3/)
+* [US UniSeat](https://github.com/antonio-decaro/US_UniSeat/)
 
 
 ## Organizzazioni
