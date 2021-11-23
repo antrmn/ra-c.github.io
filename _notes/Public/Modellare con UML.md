@@ -93,6 +93,8 @@ UML è basato su un modello architetturale a quattro livelli:
 | *Meta-modello*      | Definisce un linguaggio per la specifica dei modelli                     | Classi, attributi, operazioni, ...                 |
 | *Modello*           | Definisce un linguaggio per la specifica di un certo dominio applicativo | Classi di uno specifico contesto                   |
 | *Oggetti*           | Istanze del modello                                                      | Oggetti ottenuti istanziando le classi del modello |
+
+
 **Nota:** un modello è un'istanza di un meta-modello.  
 
 Nell'architettura a quattro livelli di UML ogni livello è un'astrazione di quello sottostante, ed è definito in termini di quello sovrastante.  
@@ -591,7 +593,7 @@ L'oggetto è denotato con un rettangolo non smussato.  Lo *stato* di un oggetto 
 
 ![objectflow.png](../../assets/img//objectflow.png)
 
-## Package DIagram
+## Package Diagrams
 
 I modelli di sistemi complessi diventano velocemente anch'essi complessi non appena vengono raffinati. la complessità dei modelli può essere trattata raggruppando elementi correlati tra loro in **packages**. Un *package* è un raggruppamento di elementi dei modelli - come use cases o classi - definendo degli scope.  
 È possibile usare il meccanismo degli UML *packages* per poter organizzare le classi in sottosistemi.  
@@ -648,7 +650,7 @@ Gli *stereotype* sono un meccanismo di estensione che consente la distinzione di
 * *«document»*  
 
 
-## Deployment Diagram
+## Deployment Diagrams
 
 I **deployment diagrams** (detti anche *diagramma di allocazione* o di *dislocazione*) consentono di rappresentare, a diversi livelli di ettagli, l'architettura fisica del sistema. Questi diagrammi permettono anche di evidenziare la configurazione dei nodi elaborativi in un ambiente di esecuzione, e dei componenti, processi ed oggetti ubicati in questi nodi.  
 
