@@ -44,6 +44,7 @@ function modeSwitcher(desiredTheme = null) {
 			changeIconImgSrc("../assets/img/sun.svg");
 			break;
 	}
+	currentTheme = desiredTheme;
 	localStorage.setItem('theme', desiredTheme);
 }
 
