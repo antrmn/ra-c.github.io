@@ -1,6 +1,6 @@
 ---
 title : Analisi
-notetype : feed
+notetype : unfeed
 date : 01-02-2021
 ---
 

@@ -1,6 +1,6 @@
 ---
 title : Raccolta dei requisiti
-notetype : feed
+notetype : unfeed
 date : 01-02-2021
 ---
 

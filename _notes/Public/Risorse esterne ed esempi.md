@@ -14,7 +14,7 @@ date : 17-11-2021
 
 
 ## Organizzazioni
-* www.ieee.org per gli standard IEEE del software
-* www.w3c.org per gli standard del software web
-* www.omg.org per gli standard del software ad oggetti
-* www.oasins-open.org per gli standard del software business
+* [www.ieee.org](www.ieee.org) per gli standard IEEE del software
+* [www.w3c.org](www.w3c.org) per gli standard del software web
+* [www.omg.org](www.omg.org) per gli standard del software ad oggetti
+* [www.oasis-open.org](www.oasis-open.org) per gli standard del software business
