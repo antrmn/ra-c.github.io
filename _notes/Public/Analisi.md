@@ -4,6 +4,8 @@ notetype : feed
 date : 01-02-2021
 ---
 
+* TOC  
+{:toc}
 # Introduzione
 
 La formalizzazione aiuta a identificare aree di ambiguità insieme a inconsistenze e omissioni in una specifica dei requisiti. Una volta che gli sviluppatori identificano il problema con la specifica, essi affrontano il problema raccogliendo altre informazioni dagli utenti e dal committente. Raccolta e analisi dei requisiti sono attività iterative e incrementrali ed effettuate concorrentemente.  
