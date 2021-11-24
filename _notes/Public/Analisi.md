@@ -120,7 +120,7 @@ Gli oggetti individuati vanno denominati *univocamente*: i loro nomi promuovono 
 
 Gli oggetti individuati vanno in oltre descritti insieme ai loro attributi e alle loro responsabilità: tali descrizioni permettono agli sviluppatori di chiarire concetti ed evitare malintesi. Tuttavia, tali descrizioni **non** sono obbligatorie e possono essere omesse se i concetti risultano ovvi: ci saranno un bel po' di iterazioni in cui l'oggetto sarà revisionato e si potrà eventualmente descrivere l'oggetto.  
 
-## Identificare oggetti *boundary*
+## Identificare oggetti *Boundary*
 
 Gli oggetti *boundary* rappresentano l'interfaccia di sistema con gli attori.  
 
