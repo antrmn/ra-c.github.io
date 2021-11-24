@@ -5,7 +5,7 @@ layout: Stylesheet
 @import "/assets/css/highlight.css";
 /* Containers: Body, Container, Box, Main, Header, Content */ 
 
-html, html[data-theme="light"] {
+html, html[data-theme="dusk"] {
     --bg-main: #F4ECD8;
         --bg-sub: #E1DBCD;
     --color-bis: #363636;
@@ -25,6 +25,15 @@ html[data-theme="dark"] {
     --border: #353535;
 }
 
+html[data-theme="light"] {
+    --bg-main: #FFFFFF;
+    --bg-sub: #FAFAFC;
+    --text-main: #18181C;
+    --text-sub: #5D5D67;
+    --link: #2380ED;
+    --border: #E5E5E5;
+} 
+
 
 @media (prefers-color-scheme: dark) {
     html, html[data-theme="dark"] {
@@ -36,7 +45,7 @@ html[data-theme="dark"] {
         --border: #353535;
     }
 
-    html[data-theme="light"] {
+    html[data-theme="dusk"] {
 	    --bg-main: #F4ECD8;
         --bg-sub: #E1DBCD;
         --text-main: #5B4636;
@@ -44,6 +53,15 @@ html[data-theme="dark"] {
         --link: #2380ED;
         --border: #E5E5E5;
   } 
+
+  html[data-theme="light"] {
+    --bg-main: #FFFFFF;
+    --bg-sub: #FAFAFC;
+    --text-main: #18181C;
+    --text-sub: #5D5D67;
+    --link: #2380ED;
+    --border: #E5E5E5;
+} 
 }
 
 
