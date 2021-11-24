@@ -7,7 +7,7 @@ let themes = ['light', 'dusk', 'dark'];
 const defaultTheme = 'dark';
 
 let currentTheme;
-if (localStorage.getItem('theme') != null && themes.include(localStorage.getItem('theme'))){
+if (localStorage.getItem('theme') != null && themes.includes(localStorage.getItem('theme'))){
 	currentTheme = localStorage.gettItem('theme');
 } else if (window.matchMedia) {
 	currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
