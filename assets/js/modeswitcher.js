@@ -47,4 +47,4 @@ function modeSwitcher(desiredTheme = null) {
 	localStorage.setItem('theme', desiredTheme);
 }
 
-modeSwitcher();
+modeSwitcher(currentTheme);
