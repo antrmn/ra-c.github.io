@@ -30,17 +30,17 @@ function modeSwitcher(desiredTheme = null) {
 	switch(desiredTheme){
 		case 'light':
 			document.documentElement.setAttribute('data-theme', 'light');
-			sessionStorage.setItem('theme', 'light');
+			localStorage.setItem('theme', 'light');
 			changeIconImgSrc("../assets/img/dusk.svg");
 			break;
 		case 'dusk':
 			document.documentElement.setAttribute('data-theme', 'dusk');
-			sessionStorage.setItem('theme', 'dusk');
+			localStorage.setItem('theme', 'dusk');
 			changeIconImgSrc("../assets/img/moon.svg");
 			break;
 		case 'dark':
 			document.documentElement.setAttribute('data-theme', 'dark');
-			sessionStorage.setItem('theme', 'dark');
+			localStorage.setItem('theme', 'dark');
 			changeIconImgSrc("../assets/img/sun.svg");
 			break;
 	}
