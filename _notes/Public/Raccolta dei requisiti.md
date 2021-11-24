@@ -11,13 +11,13 @@ date : 01-02-2021
 
 La **raccolta dei requisiti** (*requirements elicitation*) si focalizza sul descrivere lo scopo del sistema. Il committente, lo sviluppatore e gli utenti identificano un problema e definiscono un sistema che indirizza tale problema: tale definizione è detta **specifica dei requisiti** (*requirements specification*) e serve da contratto tra il committente e gli sviluppatori.  
 
-La specifica dei requisiti è strutturata e formalizzata durante la fase di **analisi dei requisiti**, che produce un **modello di analisi** (*analysis model*).  
+La specifica dei requisiti è strutturata e formalizzata durante la fase di **analisi**, che produce un **modello di analisi** (*analysis model*).  
 
-I prodotti delle fasi di raccolta e analisi dei requisiti sono raffigurati nel seguente *activity diagram*:  
+I prodotti delle fasi di raccolta e analisi sono raffigurati nel seguente *activity diagram*:  
 
 ![anreq.png](../../assets/img//anreq.png)
 
-Le fasi di raccolta e analisi dei requisiti rappresentato le stesse informazioni: le due fasi differiscono solo nel linguaggio e nella notazione utilizzata:  
+Le fasi di raccolta e analisi rappresentato le stesse informazioni: le due fasi differiscono solo nel linguaggio e nella notazione utilizzata:  
 
 * la *specifica dei requisiti* (ottenuta nella fase di raccolta) è scritta in linguaggio naturale
   + la specifica dei requisiti supporta la comunicazione con gli stakeholder
@@ -26,7 +26,7 @@ Le fasi di raccolta e analisi dei requisiti rappresentato le stesse informazioni
 
 Entrambi sono considerati modelli del sistema ed entrambi rappresentano gli stessi aspetti del sistema: pertanto, è possibile eseguire le fasi di raccolta e analisi in maniera concorrente e iterativa.  
 
-Le fasi di raccolta e l'analisi dei requisiti si focalizzano solo sul sistema dal *punto di vista dell'utente*: questo comprende le funzionalità di sistema, le interazioni utente-sistema, gli errori che il sistema rileva e gestisce e le condizioni ambientali in cui il sistema deve funzionare.  
+Le fasi di raccolta e l'analisi si focalizzano solo sul sistema dal *punto di vista dell'utente*: questo comprende le funzionalità di sistema, le interazioni utente-sistema, gli errori che il sistema rileva e gestisce e le condizioni ambientali in cui il sistema deve funzionare.  
 
 La struttura del sistema, le tecnologie implementative scelte per costruire il sistema, la progettazione del sistema, le metodologie di sviluppo e altri aspetti *non direttamente visibli all'utente* **non** sono parte dei requisiti.  
 
@@ -338,7 +338,7 @@ Le seguenti euristiche possono essere usate per selezionare una relazione *«inc
 
 Uno dei primi ostacoli che gli sviluppatori e gli utenti incontrano durante la loro collaborazione riguarda l'utilizzo di terminologie differenti. Anche se col tempo gli sviluppatori imparano la terminologia ell'utente, questa problematica è riscontrabile nuovamente quando nuovi sviluppatori vengono aggiunti al progetto.   
 
-Per stabilire una terminologia chiara, gli sviluppatori identificano gli **oggetti partecipanti** per ogn icaso d'uso. Gli sviluppatori dovrebbero identificare, denominare e descrivere univocamente tali oggetti e inserirli in un **glossario** (detto anche *data dictionary*). La costruzione del glossario costituisce in realtà il primo passo verso l'analisi dei requisiti ([[Analisi dei requisiti]]).  
+Per stabilire una terminologia chiara, gli sviluppatori identificano gli **oggetti partecipanti** per ogn icaso d'uso. Gli sviluppatori dovrebbero identificare, denominare e descrivere univocamente tali oggetti e inserirli in un **glossario** (detto anche *data dictionary*). La costruzione del glossario costituisce in realtà il primo passo verso l'analisi ([[Analisi]]).  
 
 Il glosario è incluso nella specifica dei requisiti e, successivamente, nei manuali utente.  
 Gli sviluppatori mantengono il glossario aggiornato con l'evolersi della specifica dei requisiti.  
@@ -351,7 +351,7 @@ I benefici di un glossario sono molteplici:
 
 L'identificazione degli *oggetti partecipanti* risulta in un iniziale **modello a oggetti di anlisi** (*analysys object model*). L'identificazione degli oggetti partecipanti durante la raccolta dei requisiti costituisce un primo psso verso il completamento del *modello a oggetti di analisi*.  
 
-Il *modello a oggetti di analisi* **non** è di solito usato come mezzo di comunicazione tra sviluppatori e utenti, in quanto questi ultimi in genere non hanno familiarità con i concetti dell'OO. Tuttavia, la descrizione degli oggetti (es. le definizioni dei termini nel glossario) e i loro attributi potrebbero essere visualizzati e revisionati dagli utenti. Questa attività è approfondita in [[Analisi dei requisiti]]  
+Il *modello a oggetti di analisi* **non** è di solito usato come mezzo di comunicazione tra sviluppatori e utenti, in quanto questi ultimi in genere non hanno familiarità con i concetti dell'OO. Tuttavia, la descrizione degli oggetti (es. le definizioni dei termini nel glossario) e i loro attributi potrebbero essere visualizzati e revisionati dagli utenti. Questa attività è approfondita in [[Analisi]]  
 
 
 Alcune euristiche per **identificare** gli oggetti di analisi iniziali:
@@ -398,13 +398,13 @@ La seguente figura mostra delle domande per ogni categoria FURPS+:
 
 # Requirements Analysis Document
 
-I risultati delle fasi di raccolta e analisi dei requisiti sono documentate nel *Requirements Analysis Document* (**RAD**). Questo documento descrive completamente il sistema in termini di requisiti funzionali e non funzionali.  
+I risultati delle fasi di raccolta e analisi sono documentate nel *Requirements Analysis Document* (**RAD**). Questo documento descrive completamente il sistema in termini di requisiti funzionali e non funzionali.  
 
 I lettori del RAD includono il committente, gli utenti, i gestori del progetto, gli analisti di sistema e i progettisti di sistema.  
 
-La prima parte del documento, che include i casi d'uso e i requisiti non funzionali, è scritta duarante la fase di *Raccolta dei requisiti*. La formalizzazione delle specifiche in termini di *modello ad oggetti* è scritta durante la fase di *Analisi dei requisiti*.  
+La prima parte del documento, che include i casi d'uso e i requisiti non funzionali, è scritta duarante la fase di *Raccolta dei requisiti*. La formalizzazione delle specifiche in termini di *modello ad oggetti* è scritta durante la fase di *analisi*.  
 
-Il seguente è un esempio di modello per il RAD (le sezioni in corsivo sono scritte durante la fase di analisi):  
+Il seguente è un esempio di template per il RAD per la fase di Raccolta dei requisiti (le sezioni in corsivo sono scritte durante la fase di [[Analisi]]):  
 
 ![radsezioni.png](../../assets/img//radsezioni.png)
 

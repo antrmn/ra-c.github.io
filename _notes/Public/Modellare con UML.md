@@ -127,6 +127,8 @@ Il processo di sviluppo di sistemi si focalizza su 3 differenti **modelli di sis
 # Diagrammi UML
 In questa sezione sono introdotte alcune notazioni UML.  
 ## Use case diagrams
+**Ulteriori informazioni qui: [[Raccolta dei requisiti]]**
+
 I *casi d'uso* (*use cases*) sono usati durante la raccolta e analisi dei requisiti per rappresentare le funzionalità del sistema.  
 
 Gli **use cases** rappresentano una classe di funzionalità fornite dal sistema.  
