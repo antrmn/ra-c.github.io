@@ -16,3 +16,4 @@ date : 01-02-2021
 ## Fasi del processo di sviluppo
 * [[Raccolta dei requisiti]]
 * [[Analisi]]
+* [[System Design]]
