@@ -9,9 +9,15 @@ date : 17-11-2021
 * [SWE Body of Knowledge](https://cs.fit.edu/~kgallagher/Schtick/Serious/SWEBOKv3.pdf)
   + Menzionato alla fine delle slide di introduzione
 * [Pagina del corso di un'università random, con slide ed esempi](http://www.dcs.glasgow.ac.uk/~simon/teaching/MechEngSE3/)
-* [US UniSeat](https://github.com/antonio-decaro/US_UniSeat/)
-* [Istanza reale di Evaluation Scenarios](https://cordis.europa.eu/docs/projects/cnect/5/609035/080/deliverables/001-CityPulseD61Ares20151775143.pdf)
 
+
+## Progetti
+
+* [US UniSeat](https://github.com/antonio-decaro/US_UniSeat/)
+* [MyAssistance](https://github.com/aymen94/MyAssistance)
+* [Pasticciotto](https://github.com/tonioromano97/pasticciotto)
+* [UniShip](https://github.com/biagioboi/UniShip)
+* [Unisa Cinema](https://github.com/Dom996/PROGETTO-INGEGNERIA-DEL-SOFTWARE)
 
 ## Organizzazioni
 * [www.ieee.org](www.ieee.org) per gli standard IEEE del software
