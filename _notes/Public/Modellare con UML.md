@@ -325,7 +325,7 @@ Nella pratica, le tipologie di associazioni più comuni ricadono nelle seguenti 
   + È possibile scrivere ``*`` anzichè ``n``. Es. ``0..*``
 * **associazione molti-a-molti**: ha una molteplicità ``0..n`` o ``1..n`` in entrambi gli estremi.
 
-![multiplicity.png](../../assets/img//multiplicity.png "multiplicity.png")
+![multiplicity.png](../../assets/img//multiplicity.png)
 
 ####  Ruoli
 
