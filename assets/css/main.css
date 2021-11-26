@@ -256,7 +256,7 @@ code,
 pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
-  font-family: monospace; }
+  font-family: "Source Code Pro",monospace; }
 
 body {
   color: var(--text-main);
