@@ -266,11 +266,11 @@ Le seguenti euristiche possono essere usate per scrivere gli scenari e i casi d'
   + L'utente potrebbe essere familiare con un sistema simile. in tal caso, adottare le convenzioni di quella specifica interfaccia utente potrebbe rendere il sistema più utilizzabile
 * Successivamente, definisce molti scenari in maniera non molto dettagliata per definire l'ambito (*scope*) del sistema. Valida questi scenari con l'utente
 * Usa i *mock-ups* esclusivamente come supporto visuale
-  + La progettazione dell'interfaccia utente andrebbe fatta come task separato dopo che la funzionalità è sufficientemente stabili
+  + La progettazione dell'interfaccia utente andrebbe fatta come task separato dopo che la funzionalità è sufficientemente stabile
 * Presenta all'utente molteplici alternative differenti
   + Valutare le differenze amplia l'orizzonte dell'utente e le sue prospettive
   + Generare differenze forza gli sviluppatori a "pensare fuori dagli schemi"
-* Raffina e dettaglia un'ampia fetta quando il sistema e le preferenze degli utenti sono ben compresi. Valida con l'utente
+* Raffina e dettaglia quando il sistema e le preferenze degli utenti sono ben compresi; valida il risultato con l'utente
 
 Questa attività si focalizza sulla *completezza* e sulla *correttezza*. Gli sviluppatori identificano funzionalità non coperte dagli scenari, per poi documentarle raffinando gli use case o aggiungendone di altri. Gli sviluppatori descrivono casi rari o eccezionali dal punto di vista degli attori.  
 
