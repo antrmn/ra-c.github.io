@@ -293,6 +293,10 @@ code {
     border-radius: 4px;
 }
 
+.fas{
+    color: var(--text-main);
+}
+
 .regular-sans code {
     padding: 20px;
     background-color: var(--bg-sub);
