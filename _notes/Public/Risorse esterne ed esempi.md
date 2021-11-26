@@ -7,7 +7,8 @@ date : 17-11-2021
 * [*IEEE Standard Glossary of Software Engineering Terminology, 1993 (IEEE Std 610.12-1990)*](http://www.informatik.htw-dresden.de/~hauptman/SEI/IEEE_Standard_Glossary_of_Software_Engineering_Terminology%20.pdf)
   + Molti riferimenti sono basati su questo standard
 * [SWE Body of Knowledge](https://cs.fit.edu/~kgallagher/Schtick/Serious/SWEBOKv3.pdf)
-  + Menzionato alla fine delle slide di introduzione
+  + Menzionato alla fine delle slide di introduzione. Non sembra utilissimo
+* [Structure and Style in Use Cases for User Interface Design [Constantine & Lockwood, 2000]](https://jordisan.net/uploads/wordpress/2015/12/structurestyle2.pdf)
 * [Pagina del corso di un'università random, con slide ed esempi](http://www.dcs.glasgow.ac.uk/~simon/teaching/MechEngSE3/)
 
 
