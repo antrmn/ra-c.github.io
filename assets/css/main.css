@@ -685,10 +685,10 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   font-family: "Fira Sans", sans-serif !important; }
 
 .is-family-monospace {
-  font-family: monospace !important; }
+  font-family: "Source Code Pro",monospace !important; }
 
 .is-family-code {
-  font-family: monospace !important; }
+  font-family: "Source Code Pro",monospace !important; }
 
 .is-block {
   display: block !important; }
