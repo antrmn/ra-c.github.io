@@ -9,6 +9,7 @@ date : 17-11-2021
 * [SWE Body of Knowledge](https://cs.fit.edu/~kgallagher/Schtick/Serious/SWEBOKv3.pdf)
   + Menzionato alla fine delle slide di introduzione. Non sembra utilissimo
 * [Structure and Style in Use Cases for User Interface Design [Constantine & Lockwood, 2000]](https://jordisan.net/uploads/wordpress/2015/12/structurestyle2.pdf)
+  + Il template degli use case del Bruegge si basa su questo documento
 * [Pagina del corso di un'università random, con slide ed esempi](http://www.dcs.glasgow.ac.uk/~simon/teaching/MechEngSE3/)
 
 
