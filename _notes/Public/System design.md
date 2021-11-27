@@ -137,9 +137,9 @@ La decomposizione risultante ci permette di sviluppare (e riusare) i sottosistem
 
 In genere, vi è un trade-off tra coesione e accoppiamento: possiamo aumentare la coesione decomponento il sistema in sottosistemi più piccoli, ma questo porta ad un aumento dell'accoppiamento dato che il numero di interfacce cresce.  
 
-Una buona **regola empirica** da adottare è quello di affrontare \(7\pm2\) concetti per ciascun livello di astrazione: se vi sono più di 9 sottosistemi ad un dato livello di astrazione oppure se un sottosistema fornisce più di 9 servizi, occorre considerare una revisione della decomposizione.  
+Una buona **regola empirica** da adottare è quello di affrontare $7\pm2$ concetti per ciascun livello di astrazione: se vi sono più di 9 sottosistemi ad un dato livello di astrazione oppure se un sottosistema fornisce più di 9 servizi, occorre considerare una revisione della decomposizione.  
 
-Per lo stesso motivo, il numero di layers non deve essere più di \(7\pm 2\). Infatti, un buon system design è in genere compiuto con soli 3 layer.  
+Per lo stesso motivo, il numero di layers non deve essere più di $7\pm 2$. Infatti, un buon system design è in genere compiuto con soli 3 layer.  
 
 ## *Layers* e partizioni
 
