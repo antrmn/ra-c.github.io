@@ -12,7 +12,7 @@ La formalizzazione aiuta a identificare aree di ambiguità insieme a inconsisten
 
 ![anreq.png](../../assets/img//anreq.png)
 
-La fase di **analisi** si focalizza sul produrre un modello per il sistema, chiamato **modello di analisi** (*analysis model*), che sia corretto, completo, consistente e verificabile.  
+La fase di **analisi (dei requisiti)** si focalizza sul produrre un modello per il sistema, chiamato **modello di analisi** (*analysis model*), che sia corretto, completo, consistente e verificabile.  
 
 L'analisi è diversa dalla raccolta dei requisiti, dato che gli sviluppatori nella fase di analisi si focalizzano a strutturare e formalizzare i requisiti raccolti dagli utenti. Questa formalizzazione porta a nuovi approfondimenti e alla scoperta di nuovi errori nei requisiti.  
 

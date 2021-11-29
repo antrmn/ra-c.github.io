@@ -52,6 +52,8 @@ UML è indipendente dai metodi, dalle tecnologie e dai produttori.
 
 UML è una notazione risultante dall'unificazione delle notazioni **OMT** (*Object Modeling Technique*), **Booch**, e **OOSE** (*Object-Oriented Software Engineering*). UML ha anche preso spunto da idee di numerosi altri metodologi.  
 
+UML è un linguaggio **semi-formale**: presenta una sintassi ben definita ma non una precisa semantica.  
+
 Con UML il processo di sviluppo assume un approccio:  
 
 * basato sui casi d'uso (*use case driven*)
