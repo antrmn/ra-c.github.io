@@ -159,7 +159,7 @@ La figura sottostante mostra l'attore ``FieldOfficer`` che invoca lo use case ``
 
 ### Descrizione testuale degli use case
 
-Per una descrizione testuale del caso d'uso, si può usare un template composto da 6 campi adattato dal *[Constantine & lockwood, 2001]*:  
+Per una descrizione testuale del caso d'uso, si può usare un template composto da 6 campi adattato dal *[[Constantine & lockwood, 2001](https://www.researchgate.net/publication/2350151_Structure_and_Style_in_Use_Cases_for_User_Interface_Design)]*:  
 
 * **Nome del caso d'uso**, univoco in tutto il sistema e non ambiguo
 * **Attori partecipanti** al caso d'uso
@@ -327,7 +327,7 @@ Nella pratica, le tipologie di associazioni più comuni ricadono nelle seguenti 
   + È possibile scrivere ``*`` anzichè ``n``. Es. ``0..*``
 * **associazione molti-a-molti**: ha una molteplicità ``0..n`` o ``1..n`` in entrambi gli estremi.
 
-![multiplicity.png](../../assets/img//multiplicity.png "multiplicity.png")
+![multiplicity.png](../../assets/img//multiplicity.png)
 
 ####  Ruoli
 

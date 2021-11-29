@@ -114,8 +114,8 @@ In aggiunta alle *euristiche di Abbott*, è possibile usare anche le seguenti eu
 * Attività del modo reale che il sistema deve tracciare
 * *Data sources* e *Data sinks*
   + Es. ``Database`` o ``Printer``  
-  + 
-### Denominare e descrivere gli oggetti
+
+
 Gli oggetti individuati vanno denominati *univocamente*: i loro nomi promuovono l'uso di una terminologia standard ed è preferibile che questi nomi siano vicini al dominio applicativo.  
 
 Gli oggetti individuati vanno in oltre descritti insieme ai loro attributi e alle loro responsabilità: tali descrizioni permettono agli sviluppatori di chiarire concetti ed evitare malintesi. Tuttavia, tali descrizioni **non** sono obbligatorie e possono essere omesse se i concetti risultano ovvi: ci saranno un bel po' di iterazioni in cui l'oggetto sarà revisionato e si potrà eventualmente descrivere l'oggetto.  

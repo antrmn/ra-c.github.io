@@ -10,12 +10,24 @@ date : 17-11-2021
 * [*IEEE Standard Glossary of Software Engineering Terminology, 1993 (IEEE Std 610.12-1990)*](http://www.informatik.htw-dresden.de/~hauptman/SEI/IEEE_Standard_Glossary_of_Software_Engineering_Terminology%20.pdf)
   + Molti riferimenti sono basati su questo standard
 * [SWE Body of Knowledge](https://cs.fit.edu/~kgallagher/Schtick/Serious/SWEBOKv3.pdf)
+<<<<<<< HEAD
   + Menzionato alla fine delle slide di introduzione
 * [ISO/IEC/IEEE 29148:2011 standard sull'ingegneria dei requisiti](https://edisciplinas.usp.br/pluginfile.php/1077344/mod_folder/content/0/iso-iec-ieee-29148-2011.pdf)
+=======
+  + Menzionato alla fine delle slide di introduzione. Non sembra utilissimo
+* [Structure and Style in Use Cases for User Interface Design [Constantine & Lockwood, 2000]](https://jordisan.net/uploads/wordpress/2015/12/structurestyle2.pdf)
+  + Il template degli use case del Bruegge si basa su questo documento
+>>>>>>> 2ccbd27d96cdd213cc13588a9e3c098523b0c93c
 * [Pagina del corso di un'università random, con slide ed esempi](http://www.dcs.glasgow.ac.uk/~simon/teaching/MechEngSE3/)
-* [US UniSeat](https://github.com/antonio-decaro/US_UniSeat/)
-* [Istanza reale di Evaluation Scenarios](https://cordis.europa.eu/docs/projects/cnect/5/609035/080/deliverables/001-CityPulseD61Ares20151775143.pdf)
 
+
+## Progetti
+
+* [US UniSeat](https://github.com/antonio-decaro/US_UniSeat/)
+* [MyAssistance](https://github.com/aymen94/MyAssistance)
+* [Pasticciotto](https://github.com/tonioromano97/pasticciotto)
+* [UniShip](https://github.com/biagioboi/UniShip)
+* [Unisa Cinema](https://github.com/Dom996/PROGETTO-INGEGNERIA-DEL-SOFTWARE)
 
 ## Organizzazioni
 * [www.ieee.org](www.ieee.org) per gli standard IEEE del software
