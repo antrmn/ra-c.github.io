@@ -291,6 +291,24 @@ Disegnare mock-ups di interfacce aiuta a trovare omissioni nelle specifiche e ai
 
 L'importanza e l'enfasi date alle fasi di identificazione degli attori e degli scenari consente fanno sì che gli sviluppatori acquiscano conoscenza del dominio applicativo. Una volta che gli sviluppatori hanno identificato e descritto gli attori e gli scenari, questi possono formalizzare gli scenari in *use cases*.  
 
+### Scrittura degli scenari
+
+Uno use case è un'astrazione che descrive tutti i possibili senari che coinvolgono le funzionalità descritte. Uno **scenario** è un'istanza di uno use case che descrive un concreto insieme di azioni.  
+
+Gli scenari sono usati come esempio per illustrare casi comuni; il loro obiettivo è la *comprensibilità*.  
+Gli use case, invece, sono usati per descrivere tutti i possibili casi; il loro obiettivo è la *completezza*.  
+
+Descriviamo uno scenario usando un template con 3 campi:  
+
+* **Nome** dello scenario a cui possiamo riferirci senza ambiguita.
+  + Deve essere _sottolineato_ per indicare che si tratta di un'istanza.
+* **Istanze di attori partecipanti** indica le occorrenze di attori coinvolte in questo scenario
+  + Devono essere _sottolineati_ per indicare che si tratta di istanze
+* **Flusso degli eventi** di un oscenario per descrivere la sequenza ad ogni passo  
+
+
+![scenario.png](../../assets/img//scenario.png)
+
 ## Identificare i casi d'uso
 
 Uno *scenario* è un'istanza di *use case*.  
@@ -308,17 +326,24 @@ Il *nome* di un caso d'uso deve essere una frase che comincia con un verbo e che
 
 Associare degli attori inziali ai casi d'uso permette agli sviluppatori di chiarire i ruoli dei diversi utenti.  
 
-La descrizione di uno use case implica di solito la specifica di quattro campi:  
+Per una descrizione testuale del caso d'uso, si può usare un template composto da 6 campi adattato dal *[[Constantine & lockwood, 2001](https://www.researchgate.net/publication/2350151_Structure_and_Style_in_Use_Cases_for_User_Interface_Design)]*:  
 
-* **entry conditions** e **exit conditions** del caso d'uso: permettono agli sviluppatori di capire le condizioni in cui uno use case è invocato e l'impatto dello use case sull'ambiente e sul sistema
-  + Esaminando queste condizioni, lo sviluppatore può determinare se vi sono use cases mancanti
-    - *Esempio*: se uno use case richiede che il "*piano di operazioni di emergenza per terremoti*" venga attivato, allora la specifica dei requisiti deve fornire uno use case per l'attivazione di tale piano
-  * **flusso degli eventi**: permette agli sviluppatori e ai committenti di discutere le interazioni tra attori e sistema
-    + Questo porta a decisioni riguardo i confini del sistema, come ad esmepio quali decisioni sono svolte dagli attori e quali azioni sono svolte dal sistema
-* **requisiti speciali**: permette agli sviluppatori di raccogliere *requisiti non funzionali* nel contesto di una specifica funzionalità.  
+* **Nome del caso d'uso**, univoco in tutto il sistema e non ambiguo
+* **Attori partecipanti** al caso d'uso
+* **Entry conditions** per descrivere le condizioni che devono essere soddisfate prima che il caso d'uso sia avviato
+* **Flusso di eventi**: descrive le sequenze di interazioni del caso d'uso, numerate per riferimento.
+  + I casi comuni (ossia quelli previsti dall'utente) e i casi eccezionali (ossia gli imprevisti, come errori e condizioni insolite) vanno descritte separatamente in diversi use case per chiarezza
+  + Organizziamo i passi nel flusso degli eventi in 2 colonne: la colona di sinistra rappresenta gli step effettuati dall'attore, mentre la colonna di destra rappresenta gli step effettuati dal sistema. Ogni coppia di passi attore-sistema rappresenta un'interazione
+* **Exit conditions**: descrivono le condizioni soddisfatte dopo il completamento del caso d'uso e l'impatto che il caso d'uso ha sul sistema e/o sull'ambiente
+* **Special requirements**: permette agli sviluppatori di raccogliere *requisiti non funzionali* nel contesto di una specifica funzionalità.
+  + Sono requisiti che non sono correlati alle funzionalità del sistema. Questi includono i vincoli sulle performance del sistema, la sua implementazione, la piattaforma hardware su cui gira e cosi via.
 
-Nella pratica possono esserci anche altri campi (es. flusso eccezionali degli eventi, regole, ...). 
-Per maggiori informazioni vedi **Use Case Diagrams** qui: [[Modellare con UML]]    
+Un esempio di caso d'uso è il seguente:  
+
+![friendusecaset.png](../../assets/img//friendusecaset.png)
+
+I casi d'uso sono scritti in linguaggio naturale. Questo permette agli sviluppatori di usare i casi d'uso per le comunicazioni con il committente e gli utenti, che solitamente non hanno una conoscenza estensiva delle notazioni usate nell'ingegneria del software. L'uso del linguaggio naturale consente anche partecipanti da altre discipline di comprendere i requisiti del sistema. Infine, l'uso del linguagio naturale consente agli sviluppatore ci catturare cose - in particolare i requisiti speciali, che non possono essere facilmente coperti mediante i diagrammi. 
+
 
 ### Linee guida per la scrittura dei casi d'uso
 
@@ -347,7 +372,23 @@ Il seguente è un esempio di use case che viola le linee guida appena menzionate
 
 ![usecaseguide.png](../../assets/img//usecaseguide.png)
 
+### Relazioni tra casi d'uso
+(**Informazioni sui costrutti utilizzati negli UML use case diagrams qui: [[Modellare con UML]]**)  
 
+Nella rappresentazione testuale di uno use case, rappresentiamo *extend* come entry condition dello use case **che estende** (**non** nello use case esteso.).  
+
+![extendt.png](../../assets/img//extendt.png)
+
+Possiamo rappresentare la relazione *include* in una descrizione testuale dello use case in 2 modi:  
+
+* se lo use case può essere incluso in qualunque punto del flusso degli eventi, allora possiamo indicare l'inclusione nei "*Special requirements*"
+* Se lo use case incluso è invocato durante un evento particolare, indichiamo l'incusione nel flusso degli eventi
+
+![textualinclude.png](../../assets/img//textualinclude.png)
+
+Nella rappresentazione testuale, gli use case specializzati ereditano gli attori e le condizioni (entry e exit) dal caso generale.  
+
+![inheritancet.png](../../assets/img//inheritancet.png)
 
 ## Raffinare i casi d'uso
 
@@ -375,63 +416,12 @@ Questa attività si focalizza sulla *completezza* e sulla *correttezza*. Gli svi
 
 Mentre la fase di identificazione degli use case si focaizza sullo stabilire i confini del sistema, la fase di raffinamento dei casi d'uso offre maggior dettaglio sulle funzionalità offerte dal sistema e dai suoi vincoli.  
 
-## Identificare relazioni tra attori e casi d'uso
-
+## Identificare relazioni e produrre Use Case Diagram
 Le relazioni tra gli attori e gli use case permettono agli sviluppatori e agli utenti di ridurre la complessità dei modelli e aumentarne la comprensibilità.  
 
-Usiamo la relazione di "*comunicazione*" tra attori e casi d'uso per descrivere il sistema in strati di funzionalità. Usiamo la relazione *«extend»* per separate il flusso di eventi eccezionale da quello comune.  
-Usiamo la relazione *«include»* per ridurre la ridondanza tra i casi d'uso.  (Vedi [[Modellare con UML]])
+Una volta individuati e descritti i casi d'uso, occorre individuare le relazioni che occorrono tra i vari casi d'uso (o anche tra gli attori) e "fattorizzare" gli elementi comuni per diminuire la ridondanza (senza però frammentare troppo il modello): uno **use case diagram** mette in risalto le relazioni tra i vari casi d'uso e le interazioni degli attori col sistema.  
 
-### Relazione di "comunicazione" tra attori e casi d'uso
-
-La relazione di *comunicazione* tra attori e casi d'uso rappresenta il flusso di informazioni durante il caso d'uso.  
-
-L'attore che avvia il caso d'uso dovrebbe essere distinto dagli altri attori con cui il caso d'uso comunica. In questo modo ci è anche possibile distinguere quale attore può invocare un caso d'uso e quale attore invece non può.  
-
-Allo stesso modo, specificando gli attori che comunicano con un caso specifico, noi specifichiamo anche quali attori accedono a specifiche informazioni e quali invece no.  
-
-Quindi, documentanto le relazioni di avvio e di comunicazione tra attori e caso d'uso, noi stiamo specificando anche i controlli di accesso del sistemo ad un "livello grossolano".  
-
-La seguente figura mostra un esempio di relazione di *comunicazione* tra attori e casi d'uso. Gli *stereotipi* *«initiate»* e *«participate»* denotano rispettivamente gli attori che iniziano la comunicazione e quelli che vi comunicano (Dopo che è stata avviata).    
-
-![commcoars.png](../../assets/img//commcoars.png)
-
-### Relazione *«extend»* tra i casi d'uso
-
-Uno use case *estende* un altro use case se lo use case esteso include il comportamento dell'estensione sotto certe condizioni eccezionali.  
-
-La separazione del flusso eccezionale degli eventi dal flusso di base permette la stesura di use case più brevi e concisi e consente allo sviluppatore di trattare ogni tipologia di funzionalità differentemente.  
-
-![extendusecase.png](../../assets/img//extendusecase.png)
-
-### Relazione *«include»* tra i casi d'uso
-
-
-La ridondanza tra i casi d'uso va scomposta usando la relazione *«include»*.  
-
-Fattorizzare comportamenti comuni (nel flusso di eventi principale) ha molti benefici, che includono descrizioni più brevi e minore ridondanza. Tuttavia, un'eccessiva frammentazione può risultare confusionari agli utenti e al committente.  
-
-![includeusecase2.png](../../assets/img//includeusecase2.png)
-
-### Differenza tra *«include»* e *«extend»*: alcune euristiche
-
-Le relazioni *«include»* e *«extend»* sono costrutti simili.  
- 
- (Vedi *Use Case Diagrams*: [[Modellare con UML]])   
-La distinzione principale tra questi costrutti riguarda la direzione della relazione: 
-
-* Per le relazioni *«include»*, l'evento che scaturisce lo use case incluso (*target*) è descritto nel flusso degli eventi dello use case che include (*source*)
-  + Ogni use case che ne include un altro deve specificare dove tale use case va incluso
-* Per le relazioni *«extend»*, l'evento che scatrisce lo use case sorgente (quello che estende) è descritto nel sorgente stesso come precondizione
-  + Solo lo use case che estende deve specificare quali casi d'uso vanno estesi
-
-Le seguenti euristiche possono essere usate per selezionare una relazione *«include»* o *«extend»*:  
-
-* Usa relazioni *«extend»* per comportamenti eccezionali, opzionali o di rara occorrenza
-  + Un esempio di rara occorrenza è il guasto di una risorsa
-  + Un esempio di comportamento opzionale è la notifica di risorse nelle vicinanze che rispondono ad un evento non correlato
-* Usa relazioni *«include»* per comportamenti condisi tra due o più use cases
-* Non abusare della struttura dello use case model: degi use case un po' più lunghi (es. 2 pagine) possono risultare più comprensibili di tanti piccole use case
+Informazioni sugli *UML use case diagrams* sono qui: [[Modellare con UML]].  
 
 ## Identificare gli oggetti di analisi iniziali
 
