@@ -13,7 +13,7 @@ date : 01-02-2021
 * [[Modelli del ciclo di vita del software]]
 * [[Modellare con UML]]
 
-## Fasi del processo di sviluppo
+## Fasi del processo di sviluppo 
 * [[Raccolta dei requisiti]]
 * [[Analisi]]
 * [[System Design]]
