@@ -372,24 +372,6 @@ Il seguente è un esempio di use case che viola le linee guida appena menzionate
 
 ![usecaseguide.png](../../assets/img//usecaseguide.png)
 
-### Relazioni tra casi d'uso
-(**Informazioni sui costrutti utilizzati negli UML use case diagrams qui: [[Modellare con UML]]**)  
-
-Nella rappresentazione testuale di uno use case, rappresentiamo *extend* come entry condition dello use case **che estende** (**non** nello use case esteso.).  
-
-![extendt.png](../../assets/img//extendt.png)
-
-Possiamo rappresentare la relazione *include* in una descrizione testuale dello use case in 2 modi:  
-
-* se lo use case può essere incluso in qualunque punto del flusso degli eventi, allora possiamo indicare l'inclusione nei "*Special requirements*"
-* Se lo use case incluso è invocato durante un evento particolare, indichiamo l'incusione nel flusso degli eventi
-
-![textualinclude.png](../../assets/img//textualinclude.png)
-
-Nella rappresentazione testuale, gli use case specializzati ereditano gli attori e le condizioni (entry e exit) dal caso generale.  
-
-![inheritancet.png](../../assets/img//inheritancet.png)
-
 ## Raffinare i casi d'uso
 
 L' uso degli scenari e dei casi d'uso per definire le funzionalità di un sistema mira alla creazione di requisiti che vengono poi validati dagli utenti nelle prime fasi dello sviluppo.  
@@ -421,7 +403,22 @@ Le relazioni tra gli attori e gli use case permettono agli sviluppatori e agli u
 
 Una volta individuati e descritti i casi d'uso, occorre individuare le relazioni che occorrono tra i vari casi d'uso (o anche tra gli attori) e "fattorizzare" gli elementi comuni per diminuire la ridondanza (senza però frammentare troppo il modello): uno **use case diagram** mette in risalto le relazioni tra i vari casi d'uso e le interazioni degli attori col sistema.  
 
-Informazioni sugli *UML use case diagrams* sono qui: [[Modellare con UML]].  
+(**Informazioni sui costrutti utilizzati negli UML use case diagrams qui: [[Modellare con UML]]**)   
+
+Nella rappresentazione testuale di uno use case, rappresentiamo *extend* come entry condition dello use case **che estende** (**non** nello use case esteso.).  
+
+![extendt.png](../../assets/img//extendt.png)
+
+Possiamo rappresentare la relazione *include* in una descrizione testuale dello use case in 2 modi:  
+
+* se lo use case può essere incluso in qualunque punto del flusso degli eventi, allora possiamo indicare l'inclusione nei "*Special requirements*"
+* Se lo use case incluso è invocato durante un evento particolare, indichiamo l'incusione nel flusso degli eventi
+
+![textualinclude.png](../../assets/img//textualinclude.png)
+
+Nella rappresentazione testuale, gli use case specializzati ereditano gli attori e le condizioni (entry e exit) dal caso generale.  
+
+![inheritancet.png](../../assets/img//inheritancet.png)
 
 ## Identificare gli oggetti di analisi iniziali
 
