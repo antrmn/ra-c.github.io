@@ -1,8 +1,8 @@
------
+---
 title : Analisi
 notetype : unfeed
 date : 01-02-2021
-----
+---
 
 * TOC  
 {:toc}
