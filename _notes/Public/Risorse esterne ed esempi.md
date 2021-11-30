@@ -5,7 +5,7 @@ date : 17-11-2021
 ---
 
 * [[Esempi presi da libri e da slide]]
-
+  + [ARENA](../../assets/misc//ARENA.pdf)
 
 * [*IEEE Standard Glossary of Software Engineering Terminology, 1993 (IEEE Std 610.12-1990)*](http://www.informatik.htw-dresden.de/~hauptman/SEI/IEEE_Standard_Glossary_of_Software_Engineering_Terminology%20.pdf)
   + Molti riferimenti sono basati su questo standard
