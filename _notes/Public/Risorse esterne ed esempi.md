@@ -22,6 +22,7 @@ date : 17-11-2021
 -------
 
 * [Il login è un caso d'uso?](https://softwareengineering.stackexchange.com/questions/421008/if-logging-in-is-not-a-use-case-then-what-is-it-and-where-do-i-describe-it)
+  + [Altro link](https://stackoverflow.com/questions/63970659/fixing-a-use-case-diagram-actor-boundaries-and-generalization)
 
 ## Progetti
 
