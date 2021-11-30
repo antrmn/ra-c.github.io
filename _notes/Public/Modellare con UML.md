@@ -7,6 +7,9 @@ date : 01-02-2021
 * TOC  
 {:toc}
 
+**Nota: questo capitolo è solo introduttivo e non approfondisce i vari costrutti UML. Per maggiori informazioni vedi il libro *The Unified Modeling Language User Guide (Booch)***  
+
+
 # Concetti di modellazione  
 ## Sistemi e modelli
 

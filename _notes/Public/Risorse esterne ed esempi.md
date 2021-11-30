@@ -15,6 +15,10 @@ date : 17-11-2021
 * [ISO/IEC/IEEE 29148:2011 standard sull'ingegneria dei requisiti](https://edisciplinas.usp.br/pluginfile.php/1077344/mod_folder/content/0/iso-iec-ieee-29148-2011.pdf)
 * [Structure and Style in Use Cases for User Interface Design [Constantine & Lockwood, 2000]](https://jordisan.net/uploads/wordpress/2015/12/structurestyle2.pdf)
   + Il template degli use case del Bruegge si basa su questo documento
+* The Unified Modeling Language User Guide (Booch, 2005)
+  + Ottimo riferimento per approfondire i costrutti UML. Libro menzionato dal Bruegge
+* Writing Effective Use Cases (Cockburn, 2000)
+  + Riferimento per la scrittura dei casi d'uso. Menzionato dal Bruegge
 
 -------
 

@@ -352,6 +352,7 @@ Scrivere casi d'uso è un mestiere (*craft*). Un analista impara  con l'esperien
 * I casi d'uso devono avere come nome una frase che comincia con un verbo e che indica quello che l'utente ha intenzione di compiere
   + ``ReportEmergency``, ``OpenIncident``
   + I verbi devono corrispondere ad azioni dal punto di vista dell'utente, non del sistema
+* Il primo passo nel flusso degli eventi corrisponde generalmente al trigger del caso d'uso
 * Gli attori devono avere come nome una frase nominale
   + ``Fieldofficer``, ``Dispatcher``, ``Victim``
 * Il confine del sistema deve essere chiaro. I passo compiuti dal sistema e i passi compiuti dall'attore devono essere ben distinti
