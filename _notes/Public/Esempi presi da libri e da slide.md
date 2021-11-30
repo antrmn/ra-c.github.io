@@ -4,6 +4,10 @@ notetype : unfeed
 date : 17-11-2021
 ---
 
+* TOC  
+{:toc}  
+
+
 ## TicketDistributor
 
 *Preso dal Bruegge, capitolo introduttivo*  
