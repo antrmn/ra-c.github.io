@@ -27,7 +27,7 @@ date : 17-11-2021
 
 ## Progetti
 
-* [BiBlionet](https://github.com/StefanoLambiase/biblionet)
+* [Biblionet](https://github.com/StefanoLambiase/biblionet)
 * [US UniSeat](https://github.com/antonio-decaro/US_UniSeat/)
 * [MyAssistance](https://github.com/aymen94/MyAssistance)
 * [Pasticciotto](https://github.com/tonioromano97/pasticciotto)
