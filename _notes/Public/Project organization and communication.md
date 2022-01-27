@@ -178,7 +178,9 @@ Tra gli eventi di comunicazione pianificati:
   + Esempi: Software project management plan, RAD, SDD, Beta version di un software, Final version di un software,, User manual
 * **Postmortem review**
   + Obiettivo: descrivere le lezioni imparate
-  + Pianificato alla fine di un progetto
+  + Pianificato alla fine di un progetto  
+
+
 ### Comunicazioni non pianificate
 * **Request for clarification**
   + L'ammontare di comunicazioni tra sviluppatori, clienti e utenti
@@ -189,9 +191,12 @@ Tra gli eventi di comunicazione pianificati:
   + Tali richieste sono spesso formalizzate quanto la taglia del progetto è significativa
 * **Issue resolution**
   + Seleziona una singola soluzione a un problema per cui numerose soluzioni sono state proposte
-  + Si usano *issues tracking systems* appositi per tenere traccia dei problemi e delle proposte
+  + Si usano *issues tracking systems* appositi per tenere traccia dei problemi e delle proposte  
+
+
 ## Meccanismi di comunicazione
-### Comunicazione sincrona
+### Comunicazione sincrona  
+
 * **Segnali di fumo**
 * **Conversazioni di corridoio**
   + Supporta: conversazioni non pianificate, *request for clarification*, *request for change*
