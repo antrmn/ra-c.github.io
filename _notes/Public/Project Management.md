@@ -40,7 +40,7 @@ Le attività del project manager sono:
 
 * Introduzione  
   + Overview del Progetto  
-    - *Descrizione di massima del progetto e del prodotto.  *
+    - *Descrizione di massima del progetto e del prodotto.*
   + Deliverables del Progetto  
     - *Tutti gli items che saranno consegnati, con data e luogo di consegna*
   + Evoluzione del Progetto  
@@ -50,37 +50,37 @@ Le attività del project manager sono:
   + Definizioni e Abbreviazioni  
 * Organizzazione del progetto  
   + Modello del Processo  
-     - *Relazioni tra le varie fasi del processo  *
+     - *Relazioni tra le varie fasi del processo*
   + Struttura Organizzativa  
-     - *Gestione interna, carta dell’organizzazione * 
+     - *Gestione interna, carta dell’organizzazione* 
   + Interfacce Organizzative  
      - *Relazioni con altre entità*  
   + Responsabilità di Progetto  
      - *Principali funzioni e attività;*  
      - *Di che natura sono?*  
-     - *Chi ne è il responsabile ?  *
+     - *Chi ne è il responsabile ?*
 * Processi gestionali  
   + Obiettivi e Priorità  
   + Assunzioni, Dipendenze, Vincoli  
-     - *Fattori esterni * 
+     - *Fattori esterni* 
   + Gestione dei rischi  
-     - *Identificazione, Valutazione, Monitoraggio dei rischi * 
+     - *Identificazione, Valutazione, Monitoraggio dei rischi* 
   + Meccanismi di monitoraggio e di controllo  
-    - *Meccanismi di reporting, format, flussi di informazione,  revisioni  *
+    - *Meccanismi di reporting, format, flussi di informazione,  revisioni*
   + Pianificazione dello staff  
     - *Skill necessari (cosa?, quanto?, quando?)*
 * Processi tecnici  
   + Metodi, Strumenti e Tecniche  
-     - *Sistemi di calcolo, metodi di sviluppo, struttura del team, ecc.*  
-     - *Standards, linee guida, politiche.*  
+     - *Sistemi di calcolo, metodi di sviluppo, struttura del team, ecc*  
+     - *Standards, linee guida, politiche*  
   + Documentazione del Software  
-     - *Piano di documentazione, che deve includere milestones, e revisioni  *
+     - *Piano di documentazione, che deve includere milestones, e revisioni*
   + Funzionalità di supporto al progetto  
-     - *Pianificazione della qualità  *
+     - *Pianificazione della qualità*
      - *Pianificazione della gestione delle configurazioni *
 * Pianificazione del lavoro, delle risorse umane e del budget.  
   +  Work Packages  
-     - *Il progetto è scomposto in tasks; definizione di ciascun task * 
+     - *Il progetto è scomposto in tasks; definizione di ciascun task* 
   + Dipendenze  
      - *Relazioni di precedenza tra funzioni, attività e task*  
   + Risorse Necessarie  
@@ -142,8 +142,6 @@ Nel **PERT** (*Project Evaluation Review Technique*) ad ogni attività vengono i
 Mediante il diagramma PERT è possibile risalire al **cammino critico** nel grafo delle attività, ovvero di quell'insieme di attività logicamente dipendenti tra di loro che collegano il nodo iniziale (attività di inizio) al nodo finale (attività di fine) e la cui somma delle durate è massima. Un ritardo in una di queste attività, implica il ritardo dell'intero progetto.  
 
 Il cammino critico individuato, in questo caso, è il seguente:  
-
-//figure  network attività critic
 
 
 ### Diagramma di Gannt  
