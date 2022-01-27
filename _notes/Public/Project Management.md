@@ -1,5 +1,5 @@
 ---
-title : Project management
+title : Project Management
 notetype : unfeed
 date : 17-11-2021
 ---
