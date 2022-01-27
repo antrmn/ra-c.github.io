@@ -17,3 +17,8 @@ date : 01-02-2021
 * [[Raccolta dei requisiti]]
 * [[Analisi]]
 * [[System Design]]
+
+## Cenni di Project Management
+
+* [[Project organization and communication]] (draft)
+* [[Project Management]] (draft)
