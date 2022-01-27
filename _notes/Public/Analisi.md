@@ -327,7 +327,13 @@ La revisione può essere facilitata da una **lista di domande**. Le seguenti son
 * **Domande da chiedere per verifica la realisticità del sistema descritto dal modello di analisi**
   + *Vi sono nuove funzionalità nel sistema? Vi sono stati degli studi o prototipi costruiti per assicurare la sua fattibilità?*
   + *Possono essere soddisfatti i requisiti sulle performance e sull'affidabilità? Sono stati verificati tali requisiti mediante un prototipo in esecuzione sull'hardware stabilito?*
-# Requirements Analysis Document
+
+  
+# Gestire l'analisi dei requisiti
+
+In questa sezione sono discussi problemi legati alla gestione delle attività di analisi in un progetto di sviluppo multi-team. La prima sfida in un progetto del genere è quella di mantenere la consistenza menstre si usano così tatne risorse.  
+
+##  Documentare la fase di analisi: Requirements Analysis Document
 
 Le attività di [[Raccolta dei requisiti]] e di Analisi sono documentate nel *Requirements Analysis Document* (**RAD**).  
 
@@ -341,3 +347,57 @@ Il seguente è un esempio di template per il RAD per la fase di analisi:
   + Ogni oggetto è descritto con una definizione testuale. Le relazioni tra oggetti sono illustrati con i *class diagrams*
 * **Dynamic model**: documenta il comportamento dell'*object model* in termini di *state diagrams* e di *sequence diagrams*
   + Nonostante questa informazione possa sembrare ridondante col modello degli *use case*, il *dynamic model* ci permette di rappresentare più precisamente dei comportamenti complessi, come degli use case che coinvolgono tanti attori. 
+
+## Assegnare responsabilità  
+
+La fase di analisi richiede la partecipazione di un'ampia gamma di figure: il *target user* fornisce conoscenza riguardo il dominio applicativo; il committente finanzia il progetto; gli analisti raccolgono conoscenza riguardo il dominio applicativo e lo formalizzano; gli sviluppatori forniscono feedback riguardo costi e fattibilità; il project manager coordina gli sforzi degli sviluppatori.  
+
+Per grandi sistemi le figure in gioco sono innumerevoli: a tal proposito è possibile assegnare ruoli e ambiti ben definiti a ciascun individuo.  
+
+Ci sono tre ruoli principali: *generation of information*, *integration*, *review*:  
+
+* L'*utente finale* è esperto del dominio applicativo e *genera informazioni* sul sistema corrente
+* Il *cliente* è un ruolo di *integrazione*, definisce lo scopo del sistema sulla base delle richieste dell'utente
+* L'*analista* è lo sviluppatore con la maggiore conoscenza del dominio applicativo e *genera informazioni* sul sistema da sviluppare.
+* L'*architetto* è un ruolo di *integrazione*, unifica use case e oggetti dal punto di vista del sistema
+* Il *manager delle configurazioni* (*configuration manager*) è responsabile di mantenere la storia delle revisioni e la tracciabilità del RAD con gli altri documenti
+* Il *reviewer* valida il RAD per correttezza, completezza, consistenza e chiarezza
+
+## Comunicazione
+
+È difficile la comunicazione nelle prime fasi.  
+Fattori che contribuiscono ad aumentare tale difficoltà sono:  
+
+* Diversi background dei partecipanti
+* Diverse aspettative degli stakeholders
+  + Cliente: *max investimento*
+  + Utente: *supportare il proprio lavoro senza che questo incida sul suo ruolo*
+  + Manager: *rispettare i tempi*
+* Nuovi team: la raccolta e l'analisi dei requisiti spesso segna l'inizio di un nuovo progetto e, di conseguenza, di nuovi team. Occorre quindi imparare a lavorare insieme
+* Evoluzione del sistema: quando un nuovo sistema è in sviluppo dalle fondamenta, i termini e i concetti relativi al nuovo sistema sono un flusso continuo durante gran parte della fase di analisi e di system design e possono variare  
+
+
+Alcune linee guida possono aiutare a gestire la complessità:  
+
+* Definisci un ambiente chiaro: definisci bene i ruoli; adotta forum pubblici e privati, con un database di discussione ben visibile al cliente (e uno non visibile)
+  + Fai in modo che lo sviluppatore non interferisca con le politiche interne tra cliente e utente
+* Definisci chiari obiettivi e criteri di successo (sia per il cliente che per lo sviluppatore) nel RAD
+* Brainstorming
+  + Far comunicare tutti gli stakeholder
+  + Usare linguaggi standard come UML
+  + Mantenere l'ultima release del documento online per propagare eventuali cambiamenti
+
+## Accordo con il cliente
+
+L'accordo con il cliente rappresenta l'accettazione del modello di analisi. Cliente e sviluppatori convergono su funzioni e caratteristiche che avrà il sistema e anche su:  
+
+* lista di priorità
+* processo di revisione
+* lista di criteri per accettare il sistema
+* scheduling delle attività e budget
+
+
+Un esempio di processo di revisione è il seguente:  
+
+![](../../assets/img//procrev.png)
+

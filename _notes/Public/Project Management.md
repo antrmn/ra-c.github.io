@@ -4,6 +4,9 @@ notetype : unfeed
 date : 17-11-2021
 ---
 
+* TOC  
+{:toc}
+
 # Introduzione
 
 **Software project management**: attività necessarie per assicurare lo sviluppo di un prodotto software nel rispetto delle *scadenze* fissate e rispondento a determinati *standard*.  
