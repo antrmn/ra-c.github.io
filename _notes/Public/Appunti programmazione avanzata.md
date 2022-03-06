@@ -7,7 +7,7 @@ date : 01-02-2021
 * TOC  
 {:toc}
 
-**Risorsa principale:** [https://docs.python.org/3/]](https://docs.python.org/3/])
+**Risorsa principale:** [https://docs.python.org/3/](https://docs.python.org/3/a)
 
 ``help(object)`` restituisce documentazione e annotazioni per ``object``  
 
