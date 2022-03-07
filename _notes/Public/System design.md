@@ -400,6 +400,237 @@ Una volta raggruppati tutti gli oggetti correlati in un sottosistema, è possibi
 ![](../../assets/img//facadenalysis.png) 
 
 
+## Affrontare i design goals  
+
+Durante il system design identifichiamo i design goals, decomponiamo il sistema in sottosistemi e li raffiniamo fino ad affrontare tutti i design goals. In questo capitolo vengono introdotte le attività che occorrono allo scopo di affrontare i design goals.  
+
+I design goals guidano le decisioni poste dagli sviluppatori, specialmente quando sono necessari dei trade-off.  
+Gli sviluppatori dividono il sistema in parti gestibili allo scopo di affrontare la complessità: ogni sottosistema è assegnato a un team e realizzato indipendentemente. Affinché ciò sia possibile, gli sviluppatori devono affrontare problematiche a livello di sistema quando si decompone il sistema. Nello specifico, occorre affrontare le seguenti questioni:  
+
+* *Hardware/software mapping*: Qual è la configurazione hardware del sistema? Quale nodo è responsabile per quale funzionalità? Come è realizzata la comunicazione tra i nodi? Quali servizi sono realizzati usando componenti software esistenti? Come sono incapsulate queste componenti?
+  + Affrontare queste questioni porta spesso alla definizione di sottosistemi aggiuntivi che si occupano di spostare dati da un nodo all'altro, oppure sottosistemi aggiuntivi che affrontano le questioni legate alla concorrenza e all'affidabilità.
+  + I componenti *off-the-shelf* permettono agli sviluppatori di realizzare servizi complessi più economicamente. I componenti OTS più comuni comprendono i DBMS e le interfacce utente. Le componenti, tuttavia, devono essere ben incapsulate al fine di minimizzare le dipendenze con componenti OTS
+* *Data management*: Quali dato dovrebbero essere persistenti? Dove dovrebbero essere memorizzati i dati persistenti? Come si accede a tali dati?
+  + I dati persistenti rappresentano un collo di bottiglia nel sistema su più fronti
+  + L'accesso ai dati persistenti deve essere veloce e affidabile: una probabile corruzione dei dati porta a un probabile system failure
+* *Access control*: chi può accedere a quali dati? Il controllo degli accessi può cambiare dinamicamente? Come è specificato e realizzato il controllo deglia ccessi?
+  + Il controllo degli accessi e la sicurezza è una questione al livello di sistema.  Il controllo degli accessi deve essere consistente per tutto il sistema
+* *Control flow*: Come sono sequenziate le operazioni nel sistema? Il sistema è event-driven? Può gestire più di una interazione utente per volta?
+  + La scelta del flusso di controllo ha un impatto sulle interfacce ai sottosistemi. Se viene scelto un flusso di controllo *event-driven*, allora i sottosistemi devono fornire degli *event handlers*. Se vengono adottati i thread, allora i sottosistemi devono garantire mutua esclusione nelle sezioni critiche.
+* *Boundary conditions*: Come viene inizializzato e spento il sistema? Come sono gestiti i casi eccezionali?
+  + Queste questioni influenzano le interfacce di tutti i sottosistemi.  
+
+Il seguente activity diagram raffigura le attività del system design.  
+
+![](../../assets/img//activitysd.png) 
+
+
+Ogni attività affronta una questione descritta sopra. La fase di system design è altamente iterativa che spesso risulta nell'identificazione i nuovi sottosistemi, la modifica di sottosistemi esistenti e revisioni a livello di sistema che impattano su tutti i sottosistemi.  
+
+### UML deployment diagrams
+
+Gli UML **deployment diagrams** sono usati per raffigurare le relazioni tra i nodi e i componenti di run-time.  
+
+I **componenti** sono entità auto-contenute che forniscono servizi ad altre componenti o ad attori. Un Web Server, per esempio, è una componente che fornisce servizi ad un web browser. Un Web Browser come Safari è una componente che fornisce servizi ad un utente.  
+
+Un **nodo** è un dispositivo fisico oppure un ambiente di esecuzione in cui viene eseguito un componente. Un sistema è composto da componenti di run-time che interagiscono tra loro e che possono essere distribuiti tra più nodi. Un nodo può contenere un altro nodo (ad esempio, un dispositivo può contenere un ambiente di esecuzione).  
+
+I nodi sono rappresentati da scatole e possono essere stereotipati per distinguere i dispositivi dagli ambienti di esecuzione.  
+
+![](../../assets/img//deploymentdes.png)  
+Il diagramma sopra si focalizza sull'allocazione dei componenti ai nodi e fornisce una visione ad alto livello di ogni componente. I componenti possono essere raffinati allo scopo di includere informazioni sulle interfacce che forniscono e le classi che contengono. Il seguente *component diagram* mostra una componente con le classi in essa contenute:  
+
+![](../../assets/img//componentdes.png)  
+## Attività (design goals)  
+
+### Mappare sottosistemi ai processori e ai componenti  
+
+#### Selezionare una configurazione hardware e una piattaforma
+
+Molti sistemi girano su più di una macchina e dipendono dall'accesso a una rete intranet o alla rete Internet.  
+
+L'utilizzo di più computer può affrontare le esigenze di alte prestazioni e consente di più utenti. Di conseguenza, occorre esamianre con attenzione l'allocazione ai sottosistemi alle macchine e la progettazione dell'infrastruttura di supporto per la comunicazione tra sottosistemi. Dato che l'attività di hardware mapping ha un impatto significativo sulle prestazioni e sulla complessità del sistema, è possibile affrontare tali questioni già nei primi passi di system design.  
+
+Selezionare una configurazione hardware include anche la selezione di una macchina virtuale su cui il sistema dovrebbe essere costruito. Tale macchina virtuale include il sistema operativo e tutte le componenti software necessarie, come un DBMS, ad esempio. La selezione di una macchina virtuale riduce la distanza tra il sistema e la piattaforma hardware sul quale verrà eseguito. Più funzionalità sono offerte dalle componenti, meno sforzo di sviluppo verrà richiesto. La scelta di una VM pul, tuttavia, essere vincolata dal committente (che ha già acquistato l'hardware prima della partenza del progetto) oppure dai costi (è difficile stimare se costruire una componente sia più economico di comprarne una off-the-shelf).  
+
+#### Allocare oggetti e sottosistemi ai nodi  
+
+Una volta definita la configurazione hardware e le macchine virtuali, occorre assegnare gli oggetti e i sottosistemi ai nodi. Tale attività spesso porta all'identificazione di nuovi oggetti e sottosistemi addetti al trasporto di dati tra i nodi.  
+
+In generale, allocare sottosistemi ai nodi hardware ci consente di distruibre funzionalità e potenza di calcolo dove è più necessario. Purtroppo, questo introduce anche problematiche legate alla memorizzazione, al trasferimento, al replicare e al sicnronizzare i dati tra i sottosistemi.  
+
+### Identificare e memorizzare i dati persistenti  
+
+I **dati persistenti** "vivono più a lungo" del tempo di esecuzione del sistema.  
+
+*Dove* e *come* sono memorizzati i dati costituiscono una questione che influenza la decomposizione in sottositemi. In alcuni casi, ad esempio, in uno stile architetturale di tipo *Repository*, un sottosistema può essere completamente dedicato alla memorizzazione dei dati. La selezione si uno specifico DBMS può anche avere implicazioni sulle strategie di controllo e gestione della concorrenza.  
+
+#### Identificare gli oggetti persistenti  
+
+Come prima cosa occorre identificare quali dati devono essere persistenti.  
+Gli oggetti *entity* identificati durante la fase di analisi sono ovvi candidati per la persistenza. Non tutti gli *entity* object, tuttavia, devono essere persistenti (Alcuni oggetti sono calcolati al momento, ad esempio). I candidati alla persistenza sono anche altri e possono includere ad esempio informazioni riguardanti gli oggetti *boundary* (preferenze utente sulla GUI, ad esempio) o altro. In generale, è possibile identificare gli oggetti persistenti esaminando le classi che sopravvivono a un shutdown (volontario o no) di sistema.  
+
+#### Selezionare una strategie per la gestione dellos torage  
+
+Una volta identificati gli oggetti persistenti, occorre decidere come tali oggetti saranno memorizzati. La decisione della gestione dello storage è molto complessa ed è solitamente dettata dai requistii non funzionali: *Gli oggetti devono essere ritrovati velocemente?* *Il sistema deve eseguire query complesse per ritrovare gli oggetti?* *Gli oggetti richiedono molta memoria?*.  
+
+In generale vi sono 3 opzioni per la gestione dello storage:  
+
+
+* *Flat files*: I file sono l'astrazione alla memorizzazione fornita dai sistemi operativi. L'applicazione memorizza i suoi dati come sequenza di byte e definisce come e quando tali dati dovrebbero essere recuperati. L'astrazione dei file è relativamente di basso livello e permette all'applicazione di eseguire una moltitudine di ottimizzazioni di tempo e spazio. I file, tuttavia, richiedono all'applicazione di tenere conto di molte problematiche, come l'accesso concorrente e la perdita di dati in caso di crash.
+* *Relational database*. Un database relazionale fornisce astrazione per l'accesso ai dati ad un livello molto più alto rispetto ai file. I dati sono memorizzati in tabelle che rispettano uno **Schema**. Mappare oggetti complessi in uno schema relazionale può risultare una sfida, con più righe di più tabelle che rappresentano un singolo oggetto. I database relazionali forniscono servizi per la gestione della concorrenza, access control e crash recovery. I databsae relazionali sono una tecnologia matura, scalabile e adatta per grandi data sets. Tuttavia, possono risultare relativamente lenti per piccoli datasets e per dati non strutturati (immagini, natural language text)
+* *Object-oriented database*. Un database orientato agli oggetti fornisce servizi simili ad un database relazionale. A differenza di un DB relazionale, i dati sono memorizzati come oggetti e relative associazioni, aggiungendo quindi un ulteriore livello di astrazione (rimuovendo la necessità del mapping tabella-oggetto) e introducendo il concetto dell'ereditarietà. I database OO sono tipicamente più lenti dei DB relazionali (specialmente per query complesse) e risultano più difficili da ottimizzare.  
+
+
+![](../../assets/img//tradeoffstorage.png)  
+### Fornire controllo agli accessi  
+
+In sistemi multi-utente, diversi attori hanno accesso a diversi dati e funzionalità. Durante l'analisi, abbiamo modellato queste distinzioni associando diversi casi d'uso a diversi attori. Durante il system design, modelliamo gli accessi determinando quali oggetti sono condivisi tra gli attori e definendo come gli attori controllano l'accesso.  
+
+A seconda dei requisiti di seicurezza del sistema, definiamo anche come gli attori vengono autenticati dal sistema e come i dati selezionati nel sistema dovrebbero essere cifrati.  
+
+In generale, occorre definire per ogni attore a quali operazioni egli può accedere su ogni oggetto condiviso. Gli accessi alle classi sono modellati con una *matrice degli accessi*: le righe della matrice rappresentano gli attori del sistema, le colonne rappresentano le classi di cui controlliamo gli accessi. Una entry ``(class, actor)`` nella matrice è chiamata **access right** ed elenca le operazioni che possono essere eseguite su istanze della classe specificata dall'attore specificato.  
+
+
+![](../../assets/img//matrix.png)  
+È possibile rappresentare la matrice degli accessi seguendo tre approcci differenti:  
+
+* **Global access table** rappresenta esplicitamente ogni cella come una tupla ``(actor, class, operation)``.
+* **Access control list** associa una lista di ``(actor,operation)`` ad ogni corrispondente  ``class``. Ogni volta che un oggetto viene acceduto, la sua access list è controllata per trovare la corrispondente entry
+* Una **capability** associa una coppia ``(class, operation)`` ad un attore
+
+La rappresentazione della amtrice degli accessi costituisce una questione legata alle prestazioni: la *Global access table* richiede spazio; la *Access control list* velocizza la risposta a domande del tipo "*Chi ha accesso a questo oggetto?*; le *capabilities* velocizzano la risposta a domande del tipo "*A quali oggetti ha accesso questo attore?*".  
+
+TODO PAG 271 E 272 (Nelle slide compaiono?)  
+ANCHE 273 E 274. (Importanti: proxy, autenticazione e cifratura)  
+
+
+### Progettare il flusso di controllo globale  
+
+Il **Control flow** è il sequenziamento delle azioni in un sistema. In sistemi orientati agli oggetti, il sequenziamento delle azioni include la decisione di quali operazioni dovrebbero essere eseguite e in che ordine. Tali decisioni sono basate su eventi esterni generati da un attore o dal passaggio del tempo.  
+
+Il flusso di controllo è una questione progetuale. Durante l'analisi il flusso di controllo non è un problema, perchè supponiamo che tutti gli oggetti stiano eseguendo simultaneamente ogni operazione quando necessario. Durante la fase di progettazione dobbiamo invece tenere in considerazione gli oggetti in modo più realistico.  
+
+Ci sono tre possibili meccanismi per il control flow:  
+
+* **Procedure-driven control**: operazioni aspettano per un input quando questi necessiano di dati da un attore.
+  + Questa tipologia di control flow è usata principalmente nei sistemi legacy e in sistemi scritti in linguaggi procedurali
+  + Introduce difficoltà quando è usato con linguaggi OO, dato che col distribuirsi delle operzioni in un largo set di oggetti, diventa difficile determinate l'ordine degli input guardando il codice
+  + Utile per testare i sottosistemi: un driver fa specifiche chiamate ai metodi offerti dal sottosistema per testarli
+* **Event-driven control**: un loop principale attende per un evento esterno. Quando un evento diventa disponibile viene inoltrato all'apposito oggetto in base alle informazioni in esso contenute.
+  + Questo tipo di flusso di controllo ha il vantaggio di portare ad una struttura più semplice e di centralizzare tutti gli input nel main loop.
+  + Tuttavia, questo rende l'implementazione di sequenze multi-step più difficile.
+* **Threads**: i thread sono la variazione concorrente del controllo *procedure-driven*. Il sistema può creare un numero arbitrario di threads, ognuno dei quali corrisponde a un diverso evento
+  + Se un thread necessità di più dati, può attenere input da uno specifico attore.
+  + Questo tipo di control flow è il più intuitivo, ma il più difficile da debuggare per via del suo non determinismo  
+
+Una volta scelto il meccanismo per il controllo di flusso, possiamo realizzarlo con un insieme di uno o più oggetti di controllo. Il ruolo di tali oggetti è quello di tenere traccia degli eventi esteri, memorizzare stati temporanei a riguardo ed eseguire la giusta sequenza di operazioni ai boundary e agli entity associati all'evento esterno.  
+
+Localizzare le decisioni per il flusso di controlo per uno use case in un singolo oggetto risulta in codice più comprensibile e più resiliente a cambi nei requisiti.  
+
+### Identificare i servizi  
+
+In questa attività, si raffina la decomposizione in sottosistemi e si definiscono le interfacce per ogni servizio indentificato. Le interfacce sono raffigurate usando la notazione *UML socket and balls*. Vengono revisionate le dipendenze tra i sottosistemi e per ciascuna di esse viene definita un'interfaccia.  
+
+Durante la fase di *object design*, spefichiamo i servizi in modo più *fine-grained*, in termini di operazioni, parametri e vincoli.  
+
+Nella fase di *system design* ci si focalizza invece sulle dipendenze tra i sottosistemi. In questo modo, raffiniamo le responsabilità tra i sottosistemi, troviamo omissioni e validiamo l'architettura software corrente. Focalizzandoci sui servizi (anzichè sulle singole operazioni/parametri), riusciamo a stare ad un livello di astrazione di tipo architetturale, permettendoci di riassegnare le responsabilità tra i sottosistemi senza cambiare molti elementi modellanti.  
+
+Le operazioni fornite dai servizi dovrebbero essere verbi in *camelCase*. Gli attributi definiti dalle interfacce sono sostantivi in camelCase.  
+
+Una volta revisionate le dipendenze tra i sottosistemi e identificati i servizi corrispondenti, abbiamo una chiara visione delle responsabilità dei sottosistemi.  
+
+### Identificare condizioni limite  
+
+
+Occorre adesso esaminare le **condizioni limite** del sistema: ossia, occorre decidere come il sistema viene avviato, inizializzato e spento, e occorre definire come vengono affrontati situazioni di *major failure* come una corruzione dei dati o malfunzionamenti di rete, sia che questi siano causati da errori software che dalla mancanza di corrente elettrica.  
+
+I casi d'uso che affrontano queste problematiche sono detti **casi d'uso limite** (*boundary use cases*).  
+
+È comune che i casi d'uso limite non vengano specificati durante la fase di analisi e che questi vengano trattati separatamente rispetto ai comuni casi d'uso. Vi sono funzioni degli amministratori di sistema che possono essere dedotte dai requisiti, ma vi sono anche funzionalità che sono una coinseguenza delle decisioni di design (cache sizes, locazione del db server, locazione del backup server) e che non sono quindi deducibili dai requisiti.  
+
+In generale, identifichiamo i boundary use cases esaminando ogni sottosistema e ogni oggetto persistente:  
+
+* **Configuration**: per ogni oggetto persistente, esaminiamo in quale caso d'uso è creato o distrutto (o archiviato). Per oggetti che non sono creati o distrutti in nessun caso d'uso comune, occorre aggiungere un caso d'uso invocato da un amministratore di sistema
+* **Start-up and shutdown**: per ogni componente, aggiungiamo tre casi d'uso per avviare, spegnere e configurare il componente. Nota che un singolo caso d'uso può gestire più componenti se questi sono fortemente accoppiati
+* **Exception handling**: per ogni tipo di *component failure*, decidiamo come il sistema dovrebbe reagire (es. informa l'utente del failure). Documentiamo ognuna i queste decisioni con un caso d'uso eccezionale che estende i casi d'uso comuni rilevanti identificati durante la fase di raccolta dei requisiti  
+
+In generale, una **eccezione** p un evento o un errore che accade durante l'esecuzione del sistema. Le eccezioni sono causate da tre diverse sorgenti:  
+
+* *hardware failure*
+* *modifiche nell'ambiente operativo*: perdita di connessione, power outage
+* *software fault* un errore dovuto a un errore di design (bug)  
+
+La **Gestione delle eccezioni** è il meccanismo con cui il sistema tratta una eccezione. In caso di errore utente, il sistema dovrebbe stampare a schermo un messaggio significativo e comprensibile all'utente in modo tale che egli possa correggere l'input. In caso di errore di rete, il sistema dovrebbe salvare il proprio stato temporaneo in modo da poterlo recuperare successivamente.   
+
+Quando si identificano le condizioni boundary, gli sviluppatori esaminano ogni failure delle componenti e decidono come gestirle. È possibile progettare componenti che tollerino i failure o scrivere casi d'uso limite che specifichino come l'utente partecipa nella gestione del failure.  
+
+Sviluppare sistemi affidabili è un compito arduo. Spesso, sacrificare alcune funzionalità può rendere la progettazione più facile.  
+
+
+## Gestire il system design
+
+### Documentare il system design: System Design Document 
+
+Il system design è documentato dal *System Design Document* (**SDD**).  
+
+L'SDD è usato per definire le interfacce tra i team di sviluppatori e funge da riferimento quando decisioni di carattere architetturale devono essere revisionato. L'SDD è destinato ai project manager, agli architetti di sistema e agli sviluppatori che progettano e implementano ogni sottosistema.  
+
+La prima sezione è l'*Introduzione*. Il suo scopo è fornire una breve panoramica all'architettura software e ai suoid esign goals. Questa sezione fornisce anche riferimenti ad altri documenti e informazioni di tracciabilità.  
+
+La seconda sezione, *Architettura del software corrente*, descrive l'architetture del sistema da rimpiazzare. Se non vi è alcun sistema, questa sezione può essere sostituita da uno studio delle architetture correnti per sistemi simili. Lo scopo di questa sezione è quella i drendere esplicito il background di informazioni utilizzate dagli architetti si sistema, le loro supposizioni e le questioni comuni affrontate dal nuovo sistema.  
+
+La terza sezione, *Architettura del sistema proposto*, documenta il modello del system design del nuovo sistema ed è diviso in sette sottosezioni:  
+
+* *Panoramica*: presenta una panoramica dell'architettura software e descrive brevemente le assegnazioni delle funzionalita di ciascun sottosistema
+* *Decomposizione in sottosistemi* descrive la decomposizioni in sottosistemi e le responsabilità di ciascuno. Questo è il prodotto principale del system design
+* *Mapping software/hardware* descrive come i sottosistemi sono assegnati all'hardware e a componenti off-the-shelf. Vengono affrontati anche i problemi introdotti dai molteplici nodi e dal riuso dei software
+* *Persistent data mangement* descrive i dati persistenti memorizzati dal sistema e l'infrastruttura per la gestione dati richiesta.
+  + Questa sezione include tipicamente la descrizione dello schema, la selezione del database e la descrizione dell'incapsulazione del database
+* *Access control and security* descrive il modello utente e il sistema in termini di matrice di accesso
+  + Questa sezione descrive anche le questioni legate alla sicurezza, come la selezione di un meccanismo di autenticazione, l'uso di cifratura e la gestione delle chiavi di cifratura
+* *Global software control* descrive come il controllo software globale è implementato. In particolare, descrive come le richieste vengono scaturite e come i sottosistemi vengono sincronizzati. Questa sezione elenca e affronta le questioni legate a sincronizzazione e concorrenza
+* *Boundary conditions* descrive lo startup, shutdown e gestione degli errori per il sistema
+
+La quarta sezione, *Servizi dei sottosistemi*, descrive i servizi offerti da ciascun sottosistema. Nelle prime fasi di system design questa sezione può essere vuota o inconsistente. Questa ezione funge da riferimento tra i team per i confini di ciascun sottosistema. Le interfacce di ciascun sottosistema vengono poi raffinate nell'ODD:  
+
+L'SDD viene scritto dopo aver effettuato una prima decomposizione del sistema. L'SDD viene poi aggiornato incrementalmente durante la fase di progettazione quando le decisioni vengono prese o quando i problemi vengono scoperti. L'SDD, una volta pubblicato, viene messo in *configuration management*. La sezione del revision history fornisce una cronologia delle modifiche apportate.  
+
+### Assegnare responsabilità  
+
+A differenza della fase di analisi, il system design è il regno degli sviluppatori. Il committente e l'utente finale vengono messi in secondo piano (Anche se molte alltività del system design scaturiscono revisioni nel modello di analisi).  
+
+Il system design in sistemi complessi è incentrata intorno a un team di architetti. Questo è un team di carattere trasversale composta da architetti che definiscono la decomposizione in sottosistemi e da sviluppatori selezionati che implementato il sottosistema. Il team di architetti comincia a lavorare non appena il modello di analisi diventa stabile e continua ad essere operativo fino alla fine ella fase di integrazione. I seguenti sono i principali ruoli nel system design:  
+
+* **Architect**: il ruolo principale. Assicura consistenza nelle decisioni di design e nello stile delle interfacce.  Assicura consistenza del design nel configuration management e nei team per il testing, in partciolare nella formulazione di politiche per il configuration management e per il system integration testing.
+* **Architecture liaisons**: sono i rappresentati dei team si sottosistemi. Questi convogliano le informazioni da e per i propri team. Durante il system design, si focalizzano sui servizi dei sottosistemi; durante l'implementazione, si focalizzano sulla consistenza delle API
+* **Document editor, configuration manager, reviewer**: stessi ruoli della fase di analisi  
+
+Il numero di sottositemi determina la grandezza del team di architetti. Per sistemi complessi, un team di architetti è introdotto per ogni livello di astrazione.  
+
+### Comunicare riguardo il system design  
+
+
+Le cause della difficoltà nel comunicare durante la fase di system design sono le seguenti:  
+
+* *Numero di problemi*: il numero di problemi aumenta quando gli sviluppatori cominciano la progettazione.
+* *Cambiamenti*: la decomposizione e le interfacce dei sottosistemi sono un flusso costante. I termini usati dagli sviluppatori per nominare le parti evolvono
+* *Livello di astrazione*: le discussioni sui requisiti possono essere rese concrete usando mockup e analogie con sistemi esistemi. Discussioni sulle implementazioni diventano concrete solo quando sono disponibili i test e i suoi risultati. Raramente le discussioni sul system design sono concrete.
+* *Riluttanza nel confrontar eproblemi*: il livello di astrazioni di moste discussioni facilità la posticipazione nella risoluzione di grosse problematiche. Una tipica risoluzione è quella di "Revisioniamo questo problema durante la fase di analisi": nonostante una soluzione del genere sia desiderabile per alcune decisioni progettuali (es. strutture dati interne, algoritmi utilizzati), vi sono alcune decisioni che ahnno un impatto sui sottosistemi e sulle interfacce e che non dovrebbero essere posticipate
+* *Conflitti tra gli obiettivi e i criteri*: sviluppatori diversi ottimizzano criteri diversi. Uno sviluppatore con esperienza in UX design sarà più prono ad ottimizzare i tempi di risposta; uno sviluppatore con esperienza in db ottimizzerebbe il throughput. Questi conflitti negli obiettivi tirano la decomposizione del sistema in direzioni diverse e portano a inconsistenze.
+
+Le seguenti tecniche possono essere applicate durante la fase di analisi:  
+
+* *Identificare e prioritizzare i design goals per il sistema e renderli espliti*
+* *Rendere disponibile la versione corrente della decomposizione a tutti gli interessati*
+* *Mantenere il glossario aggiornato*
+* *Confrontare i problemi di progettazione*
+* *Iterare*.  
+
+### Iterare la fase di system design  
+
+
+
 
 ## bzbzbbzbz
 Il system design è costituito dalle seguenti attività:  
