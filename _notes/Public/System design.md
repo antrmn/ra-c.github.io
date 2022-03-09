@@ -629,6 +629,21 @@ Le seguenti tecniche possono essere applicate durante la fase di analisi:
 
 ### Iterare la fase di system design  
 
+Come per i requisiti, il system design va incontro a successive iterazioni e modifiche.  
+Le modifiche, tuttavia, dovrebbero essere controllate al fine di prevenire il caos (Specialmente in progetti complessi con molti partecipanti).  
+
+Distinguiamo tre tipologie di iterazioni durante il system design:  
+
+* Le decisioni pricipali" (*major decisions*) nelle prime fasi del system design impattano sulla decomposizione in sottosistema per ogni attività.
+  + Tali decisioni sono gestite al meglio nelle sessioni di brainstorming. In questo caso, le definizioni sono ancora un *flusso*
+* Revisioni alle interfacce
+  + Iterazioni di questo tipo mirano a risolvere alcune questioni che solitamente riguardano la scelta di uno specifico vendor o di una specifica tecnologia. In circostanze del genere, la decomposizione è stabile.
+* Errori e sviste nella progettazione  
+  + Iterazioni di questo tipo rimediano a problemi di design scoperti più avanti nella fase di progettazione. Problematiche di questo tipo dovrebbero essere evitate il più possibile  
+
+
+
+
 
 
 

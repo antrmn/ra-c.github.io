@@ -280,6 +280,14 @@ La differenza tra i 2 modelli è la seguente:
 
 ![incrementale.png](../../assets/img/incrementale.png)
 
+## Extreme programming  
+
+L'**Extreme Programming** è un approccio recente allo sviluppo del software basato su *iterazioni* veloci che rilasciano piccoli incrementi delle funzionalità. Tale approccio richiede una partecipazione più attiva del committente al team di sviluppo.  
+Tale approccio si basa sul miglioramento costante e continuo del codice (verifica e adeguamento in tempi estremamente ridotti).  
+
+
+
+
 ## Modello a spirale
 
 Il **modello a spirale** si focalizza sull'indirizzare i rischi in maniera incrementale, in ordine di priorità.  
