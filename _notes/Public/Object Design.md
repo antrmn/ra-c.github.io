@@ -118,7 +118,7 @@ La riusabilità dei fremework influenza la conoscenza del dominio applicativo ed
 
 **felicemente saltato**  
 
-## Gestire il riuso  
+# Gestire il riuso  
 
 Il riuso, sia mediante pattern che mediante framework o componenti, ha molti vantaggi tecnici e manageriali:  
 
@@ -128,7 +128,7 @@ Il riuso, sia mediante pattern che mediante framework o componenti, ha molti van
 * *Leggibilità*
 
 
-### Documentare il riuso  
+## Documentare il riuso  
 
 Le attività di riuso coinvolgono due tipi di documentazione: la documentazione delle soluzioni template riutilizzate e la documentazione del sistema che riusa tali soluzioni.  
 
@@ -145,7 +145,7 @@ Gli sviluppatori possono migliorare in modo incrementale tale documentazione ogn
 
   
   
-  ### Assegnare le responsabilità   
+## Assegnare le responsabilità   
   
   I ruoli principali coinvolti nel riuso:  
   
@@ -153,23 +153,11 @@ Gli sviluppatori possono migliorare in modo incrementale tale documentazione ogn
   * **Pattern expert**: l'esperto di determinati design patterns
   * **Technical writer**: deve essere cosciente del riuso e deve documentare le dipendenze tra patterns, componenti e sistema.
   * **Configuration manager**: come nelle fasi precedenti, ma deve tenere conto anche delle versioni delle componenti utilizzate  
+ 
 
-## Specificare le interfacce
+# Concetti di specifica delle interfacce
 
-Durante questa attività specifichiamo la firma e la visibilità di ogni operazione e descriviamo le condizioni sotto il quale ogni operazione può essere invocato e sotto quali condizioni l'operazione lancia eccezioni.  
-
-Mentre il focus del system design era quello di identificare blocchi di lavoro da assegnare ai team, il focus dell'object design è specificare i confini tra gli oggetti.   
-
-L'attività di specifica delle interfacce include:  
-
-* Identificare attributi e operazioni mancantiu
-* Specificare visibilità e firma delle operazioni
-* Specificare invarianti
-* Specificare precondizioni e postcondizioni  
-
-## Concetti  
-
-### Class implementator, class extender, clas user  
+## Class implementator, class extender, clas user  
 
 occorre differenziare gli sviluppatori in base al loro punto di vista rispetto alle interfacce:   
 
@@ -177,7 +165,7 @@ occorre differenziare gli sviluppatori in base al loro punto di vista rispetto a
 * **Class User**: invoca le opereazioni fornite dalla classe in considerazione durante la realizzazione di un'altra classe (chiamata **client class**)
 * **Class extender**: sviluppa una specializzazione della classe in considerazione  
 
-### Contratti: invarianti, precondizioni e postcondizioni  
+## Contratti: invarianti, precondizioni e postcondizioni  
 
 I **contratti** sono vincoli su una classe che consentono a tutti gli sviluppatori di condividere le stesse supposizioni su una clase. Un contratto specifica vincoli che il class user deve rispettare prima di usare la classe.  
 
@@ -189,7 +177,7 @@ Vi sono tre tipi:
 
 Usiamo i contratti per specificare casi speciali o eccezionali senza ambiguità. è anche possibile usare i vincoli per specificare in modo completo il comportamento di una operazione (**constraint based specification**).  
 
-### Object Constraint Language  
+## Object Constraint Language  
 
 Un vincolo può essere espresso in linguaggio naturale o in un linguaggio formale come l'**OCL**. OCL è un linguaggio che permette di specificare vincoli su singoli elementi modellanti o gruppi di tali elementi.  
 
@@ -219,7 +207,7 @@ Per post-condizioni, spesso serve riferirsi a un attributo prima e dopo l'operaz
     context Tournament::acceptPlayer(p:Player) post:
         getNumPlayers() = self@pre.getMaxNumPlayers()+1
 
-#### OCL collections  
+### OCL collections  
 
 In generale, i vincoli coinvolgono un numero arbitrario di classi e attributi. Ad esempio:  
 
@@ -275,7 +263,7 @@ Il vincolo 3:
     context League::getActivePlayers:Set pre:
         result = tournaments.players->asSet()
 
-#### Quantificatori OCL  
+### Quantificatori OCL  
 
 * ``forAll(variable|expression)``
 * ``exists(variable|expression)``  
@@ -286,13 +274,13 @@ Esempio:
         matches->forAll(m:Match | m.start.after(start) and m.end.before(end))
 
 
-## Attività della specifica delle interfacce  
+# Attività della specifica delle interfacce  
 
-### Identificare attributi e operazioni mancanti  
+## Identificare attributi e operazioni mancanti  
 
 Durante questo step, esaminiamo la descrizione dei servizi dei sottosistemi e identifichiamo attributi e operazioni mancanti che sono sfuggite dalla fase di analisi.  
 
-### Specificare tipi, firme e visibilità  
+## Specificare tipi, firme e visibilità  
 
 Durante questo step, specifichiamo gli attributi, la firma delle operazioni e la visibilità di questi.  
 
@@ -307,25 +295,25 @@ Infine, determiniamo la visibilità di ogni attributo e operazione. Facendo ciò
 
 ``+`` è public, ``#`` è protected, ``-`` è private  
 
-### Specificare pre e post condition  
+## Specificare pre e post condition  
 
 Definiamo i contratti per ogni operazione pubblica in ogni classe. Quando si raffina una classe, l'extender eredita il contratto dall'originale.  
 
-### Specificare invarianti  
+## Specificare invarianti  
 
 **saltato*  
 
 
 In generale, ridurre il numero di operazioni e il nesting level è desiderabile.  
 
-#### Euristiche per constraints  
+### Euristiche per constraints  
 
 I contratti specificano la semantica di ogni operazione.  
 
 
 ![](../../assets/img//heurcons.png)
 
-### Ereditare contratti 
+## Ereditare contratti 
 
 In linguaggi poliformici, una classe può essere sostituita da un suo discendente. Uno user class che invoca una operazione su una classe dovrebbe poterla invocare anche su una sottoclasse. Quindi, il class user si aspetta che il contratto valga anche per le sottoclassi. Questo è detto **contract inheritance**.  
 
@@ -337,14 +325,14 @@ I contratti sono ereditati in questo modo:
 
 L'ereditarietà dei contratti è una conseguenza del principio di sostituzone di Liskov.  
 
-## Gestire l'Object design  
+# Gestire l'Object design  
 
-Le tue sfige principali dell'object design:  
+Le due sfide principali dell'object design:  
 
 * Increased communication complexity
 * Consistency with priori decisions and documents  
 
-#### Object Design Document  
+## Object Design Document  
 
 L'object design è documentato dall'ODD. Questo descrive i trade off effettuati dagli sviluppatori, le guide linea seguite per l'interfaccia dei sottistemi, la decomposizioni dei sottosistemi in package e classi e l'interfaccia delle classi.  
 
