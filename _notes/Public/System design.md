@@ -48,7 +48,7 @@ La **decomposizione in sottosistemi** costituisce il "grosso" del system design:
 
 Il seguente *activity diagram* mostra le attività del *system design*:  
 
-![systemdesignactivity.png](../../assets/img//systemdesignactivity.png)
+![](../../assets/img//systemdesignactivity.png)
 
 
 # Concetti
@@ -65,11 +65,11 @@ Un sottosistema tipicamente corrisponde alla quantità di lavoro che un singolo 
 
 Nel caso di sottosistemi complessi, applichiamo **ricorsivamente** questo principio e decomponiamo il sottosistema in ulteriori sottosistemi più semplici. Il seguente *class diagram* mostra la struttura di un sistema:  
 
-![decomsys.png](../../assets/img//decomsys.png)
+![](../../assets/img//decomsys.png)
 
 La decomposizione in sottosistemi è rappresentata mediante *UML component diagrams*. Un esempio di decomposizione in sottosistemi è la seguente:  
 
-![decosys2.png](../../assets/img//decosys2.png)
+![](../../assets/img//decosys2.png)
 
 Nei *component diagrams*, i **componenti** sono raffigurati da rettancoli con l'icona del componente in alto a destra. Le **dipendenze** sono raffigurate da freccie tratteggiate.  
 
@@ -101,7 +101,7 @@ Le interfacce *fornite* e le interfacce *richieste* possono essere rappresentate
 
 Un esempio di *component diagram* che utilizza il costrutto *ball-and-socket* è il seguente:  
 
-![ballsocket.png](../../assets/img//ballsocket.png)
+![](../../assets/img//ballsocket.png)
 
 La notazione *ball-and-socket* viene utilizzata quando la decomposizione in sottosistemi diventa abbastanza stabile. Durante i primi passi del *system design*, potremmo non avere ancora una chiara visione riguardo l'allocazione delle funzionalità nei sottosistemi: in tal caso possiamo usare la notazione "*dipendenza*" mostrata nella sezione precedente, raffigurata da una freccia tratteggiata.  
 
@@ -120,7 +120,7 @@ L'alto accoppiamento diventa un problema solo se sono previste modifiche nei sot
 
 Il seguente *component diagram* mostra un esempio di riduzione del coupling tra i sottosistemi. La prima alternativa mostra una situazione dove tutti i sottosistemi accedono al database direttamente, mentre la seconda alternativa "copre" il database" da un sottosistema aggiuntivo che funge da "layer di astrazione". La supposizione dietro questa scelta di design sta nella supposizione che il sottosistema ``Storage`` abbia un'interfaccia più stabile di ``Database``:  
 
-![dbstoragecop.png](../../assets/img//dbstoragecop.png)
+![](../../assets/img//dbstoragecop.png)
 
 La **coesione** è il numero di dipendenze all'interno di un sottosistema.  
 Se un sottosistema contiene tanti oggetti correlati tra loro e che eseguono task simili, allora la sua coesione è alta.
@@ -130,11 +130,11 @@ Una proprietà desiderabile di una decomposizione in sottosistemi è che i suoi 
 
 Il seguente *component diagram* mostra un esempio di sottosistema con bassa coesione:  
 
-![bassacoesione.png](../../assets/img//bassacoesione.png)
+![](../../assets/img//bassacoesione.png)
 
 Nella figura sopra possiamo osservare come il *class model* possa essere partizionato in due sottografi. I sottosistemi risultanti sono i seguenti:  
 
-![altsubdec10.png](../../assets/img//altsubdec10.png)
+![](../../assets/img//altsubdec10.png)
 
 La decomposizione risultante ci permette di sviluppare (e riusare) i sottosistemi in maniera indipendente. I sottosistemi risultanti presentano una coesione più alta e l'accoppiamento tra loro risulta basso (dato che vi è solo un'associazione tra i 2 sottosistemi).  
 
@@ -152,7 +152,7 @@ I layer sono ordinati in modo tale che ogni layer può dipendere solo dai layer 
 
 Un esempio di decomposizione distribuita in 3 layer:  
 
-![layersyst.png](../../assets/img//layersyst.png)
+![](../../assets/img//layersyst.png)
 
 In una **architettura chiusa**, ogni layer può accedere solo al layer inferiore adiacente ad esso. In una **architettura aperta**, ogni layer può accedere a qualsiasi layer inferiore ad esso.  
 
@@ -175,15 +175,15 @@ Ogni sottosistema aggiunge overhead dato dall'interfacciamento con altri sottosi
 
 Un esempio di architettura chiusa è il modello **OSI**, composto da 7 layer di cui ognuno è responsabile per l'esecuzione di funzioni ben definite e fruisce dei servizi offerti dal layer immediatamente inferiore.  
 
-![OSI.png](../../assets/img//OSI.png)
+![](../../assets/img//OSI.png)
 
 In precedenza, solo i 4 layer inferiori del modello OSI (dal layer fisico fino al trasporto) erano ben standardizzati. Gli sviluppatori di applicazioni dovevano quindi riempire il gap tra il layer di *Trasporto* col layer di *Applicazione*. Col numero sempre crescente di applicazioni distribuite, questo gap ha motivato lo sviluppo di middleware come CORBA e Java RMI. CORBA e Java RMI permettono l'accesso ad oggetti remoti in maniera trasparente, come se fossero oggetti locali, implementando quindi di fatto i layer di *Presentazione* e di *Sessione*. Il seguente è quindi un altro esempio di architettura chiusa*:  
 
-![CORBA.png](../../assets/img//CORBA.png)
+![](../../assets/img//CORBA.png)
 
 Un esempio di architettura aperta è dato dallo *Swing user interface toolkit for Java*:  
 
-![swing.png](../../assets/img//swing.png)
+![](../../assets/img//swing.png)
 
 
 ## Stili architetturali
@@ -201,7 +201,7 @@ I sottosistemi sono relativamente indipendenti (*loosely coupled*) dato che inte
 
 Il flusso di controllo può essere dettato dal repository (ad esempio: trigger sui dati che invocano altri sottosistemi) oppure dai sottosistemi (ad esempio: flusso di controllo indipendente e sincronizzazione mediante lock nel repository)  
 
-![repoarch.png](../../assets/img//repoarch.png)
+![](../../assets/img//repoarch.png)
 
 
 I repository sono usati tipicamente per i DBMS: la centralità dei dati facilita il controllo di problemi di concorrenza e integrità tra i sottosistemi.  
@@ -230,7 +230,8 @@ Nello stile architetturale *Model/View/Controller* (**MVC**), i sottosistemi son
 
 L'MVC è un caso speciale di repository dove il *model* implementa la struttura dati centrale mentre gli oggetti *control* dettano il flusso di controllo.  
 
-![](../../assets/img//mvc.png)  
+![](../../assets/img//mvc.png)
+
 Il motivo per cui si separano *Model*, *View* e *Controller* è che le interfacce utenti sono soggette a cambiamenti più spesso di quanto avviene per la conoscenza del dominio. (il *model*). MVC è appropriato per sistemi interattivi, specialmente quando si utilizzano viste multiple dellos tesso model. Tuttavia, MVC introduce lo stesso collo di bottiglia visto per lo stile repository.  
 
 Il seguente *communication diagram* mostra una sequenza di eventi nello stile architetturale MVC:  
@@ -281,9 +282,12 @@ Lo stile architetturale *Three-tier* organizza i sottosistemi in 3 layer.
   + finestre, form, pagine web, …
 * L'*application logic layer* include tutti gli oggetti *control* e *entity*
   + Questo layer realizza le elaborazioni, le regole di verifica e la notifica richiesta dall'applicazione
-* Lo *storage layer* realizza la memorizzazione, il recupero e l'interrogazione di oggetti persisenti  
+* Lo *storage layer* realizza la memorizzazione, il recupero e l'interrogazione di oggetti persisenti    
 
-![](../../assets/img//3tier.png)  
+
+
+
+![](../../assets/img//3tier.png)
 
 Il layer di *storage*, in modo analogo ad un sottosistema *Repository*, può essere condiviso da diverse applicazioni che operano suglis tetti dati.  
 Inolte, la separazione dei layer di interfaccia e di logica applicativa permettono lo sviluppo di diverse interfacce grafiche per la stessa logica applicativa.  
@@ -293,10 +297,10 @@ Inolte, la separazione dei layer di interfaccia e di logica applicativa permetto
 Nell'*architettura a flusso di dati* (*pipeline*) i sottosistemi processano i dati ricevuti da un insieme di input e inviano i risultati ad altri sottosistemi via un insieme di output. I sottosistemi sono chiamati "*filtri*" mentre le associazioni tra i sottosistemi sono chiamate "*pipe*".  
 Ogni filtro conosce solo il contenuto e il formato dei dati ricevuti sulle *pipe* in input. Ogni filtro è eseguito in maniera concorrente: la sincronizzazione è compiuta dalle *pipe*.  
 
-![](../../assets/img//pipef.png)   
+![](../../assets/img//pipef.png)
 L'esempio migliore di architetture *pipeline* è dato dalla Shell UNIX.  
 
-![](../../assets/img//unixsh.png)  
+![](../../assets/img//unixsh.png)
 L'architettura a *pipeline* si presta particolarmente bene a sistemi che applicazioni trasformazioni a flussi di dati senza interventi da parte dell'utente. Questa architettura non è adatta a sistemi che richiedono interazioni complesse tra i componenti (come i sistemi interattivi)   
 
 # Attività (dagli oggetti di analisi ai sottosistemi)
@@ -306,7 +310,7 @@ Il system design consiste nel trasformare il modello di analisi nel *design mode
 
 Innanzitutto partiamo con l'ottenere il modello di analisi: prendiamo i casi d'uso e, secondo le tecniche nel capitolo sull'analisi dei requisiti ([[Analisi]]) individuiamo gli oggetti di analisi. Quello che otteniamo è il modello di analisi come il seguente:  
 
-![](../../assets/img//modelloanalisi.png)  
+![](../../assets/img//modelloanalisi.png)
 
 ## Definire i Design Goals  
 
@@ -316,8 +320,11 @@ Molti obiettivi di design possono essere dedotti dai requisiti non funzionali o 
 
 Il seguente è un esempio di design goal specificati in funzione dei requisiti non funzionali raccolti durante le fasi precedenti:  
 
-![](../../assets/img//nfr.png)    
-![](../../assets/img//dg.png)   
+![](../../assets/img//nfr.png)
+
+![](../../assets/img//dg.png)
+
+
 ### Categorie di Design Goals  
 Possiamo stabilire gli obiettivi di design in base a molti criteri. I criteri possono essere suddivisi in cinque gruppi: *performance*, *dependability* (affidabilità), *cost*, *maintenance* e *end-user criteria*  
 
@@ -329,7 +336,7 @@ I criteri riguardanti il costo e la manutenzione sono dettati dal cliente e dal 
 I *criteri di performance* includono i requisiti di velocità e di spazio imposti sul sistema.   
 *Il sistema dovrebbe essere reattivo, o deve massimizzare il numero di task compiuti? Vi è spazio in memoria disponibile per ottimizzazioni di velocità, oppure la memoria dovrebbe essere usata con parsimonia?*    
 
-![](../../assets/img//performancec.png)    
+![](../../assets/img//performancec.png)
 
 #### Criteri di affidabilità  
 
@@ -337,7 +344,7 @@ I *criteri di affidabilità* determinano quanto sforzo dovrebbe essere speso nel
 
 *Quanto spesso il sistema può crashare? Quanto deve essere disponibile il sistema agli utenti? Il sistema deve tollerare situazioni di errore e di failure? Vi sono rischi alla sicurezza associati con l'ambiente di sistema? Vi sono rischi alla sicurezza associati con i crash di sistema?*  
 
-![](../../assets/img//affc.png)    
+![](../../assets/img//affc.png)
 
 
 #### Criteri di costo  
@@ -345,7 +352,7 @@ I *criteri di affidabilità* determinano quanto sforzo dovrebbe essere speso nel
 I *criteri di costo* includono il costo per sviluppare il sistema, per il suo *deploy*, e per amministrarlo. I criteri di costo non includono solo considerazioni di tipo progettuale ma anche considerazioni di carattere *manageriale*.  
 Quando un sistema ne rimpiazza uno vecchio, il costo per assicurare la retrocompatibilità o il costo per effettuare una transizione completa vanno tenuti in considerazione. Vanno tenuti in considerazione i trade-off anche in termini di costi di sviluppo, di *formazione degli utenti finali*, dei costi di transizione, dei cosi di manutenzione…  
 
-![](../../assets/img//costsc.png) 
+![](../../assets/img//costsc.png)
 
   
 #### Criteri di manutenzione  
@@ -355,14 +362,16 @@ I *criteri di manutenzione* determinano quanto è difficile modificare il sistem
 
 Questi criteri sono difficili da ottimizzare e pianificare, dato che rararemente si è a conoscenza dell'esito del progetto e di quanto a lungo il sistema sarà operativo.  
 
-![](../../assets/img//maintenancec.png)   
+![](../../assets/img//maintenancec.png)
+
 #### Criteri dell'utente finale
 
 Gli *end user criterion* includono le qualità desiderabili dal punto di vista dell'utente finali non ancora coperte dai criteri delle altre categorie.  
 
 *Il software è difficile da usare o da imparare? Possono gli utenti svolegere i task necessari sul sistema*    
 
-![](../../assets/img//euc.png)   
+![](../../assets/img//euc.png)
+
 ### Prioritizzare design goal e giungere a compromessi
 
 Quando si definiscono i design goals, solo una piccola porzione di quei criteri può essere simultaneamente tenuta in considerazione. Sarebbe irrealistico sviluppare un software che sia allo stesso tempo sicuro, veloce ed economico.  
@@ -371,7 +380,7 @@ Tipicamente, gli sviluppatori devono *prioritizzare* gli obiettivi di design goa
 
 La seguente tabella elenca i possibili trade-off:  
 
-![](../../assets/img//tradeoff.png) 
+![](../../assets/img//tradeoff.png)
   
 Gli obiettivi di carattere manageriale possono essere scambiati con obiettivi di natura tecnica (es. tempi di consegna vs funzionalità aggiuntive). Una volta che si ha una chiara idea degli obiettivi di design, si può procedere con una prima progettazione della decomposizione in sottosistemi.  
   
@@ -397,10 +406,10 @@ Le seguenti sono alcune euristiche per il raggruppamento degli oggetti nei sotto
 
 Una volta raggruppati tutti gli oggetti correlati in un sottosistema, è possibile introdurre un oggetto di **facciata** (*façade pattern*) per creare un'interfaccia unificata nel sottosistema, nascondere le classi interne e ridurre il coupling tra i sottosistemi:  
 
-![](../../assets/img//facadenalysis.png) 
+![](../../assets/img//facadenalysis.png)
 
 
-## Affrontare i design goals  
+# Concetti: Affrontare i design goals  
 
 Durante il system design identifichiamo i design goals, decomponiamo il sistema in sottosistemi e li raffiniamo fino ad affrontare tutti i design goals. In questo capitolo vengono introdotte le attività che occorrono allo scopo di affrontare i design goals.  
 
@@ -422,12 +431,12 @@ Gli sviluppatori dividono il sistema in parti gestibili allo scopo di affrontare
 
 Il seguente activity diagram raffigura le attività del system design.  
 
-![](../../assets/img//activitysd.png) 
+![](../../assets/img//activitysd.png)
 
 
 Ogni attività affronta una questione descritta sopra. La fase di system design è altamente iterativa che spesso risulta nell'identificazione i nuovi sottosistemi, la modifica di sottosistemi esistenti e revisioni a livello di sistema che impattano su tutti i sottosistemi.  
 
-### UML deployment diagrams
+## UML deployment diagrams
 
 Gli UML **deployment diagrams** sono usati per raffigurare le relazioni tra i nodi e i componenti di run-time.  
 
@@ -437,15 +446,18 @@ Un **nodo** è un dispositivo fisico oppure un ambiente di esecuzione in cui vie
 
 I nodi sono rappresentati da scatole e possono essere stereotipati per distinguere i dispositivi dagli ambienti di esecuzione.  
 
-![](../../assets/img//deploymentdes.png)  
+![](../../assets/img//deploymentdes.png)
+
 Il diagramma sopra si focalizza sull'allocazione dei componenti ai nodi e fornisce una visione ad alto livello di ogni componente. I componenti possono essere raffinati allo scopo di includere informazioni sulle interfacce che forniscono e le classi che contengono. Il seguente *component diagram* mostra una componente con le classi in essa contenute:  
 
-![](../../assets/img//componentdes.png)  
-## Attività (design goals)  
+![](../../assets/img//componentdes.png)
 
-### Mappare sottosistemi ai processori e ai componenti  
 
-#### Selezionare una configurazione hardware e una piattaforma
+# Attività (design goals)  
+
+## Mappare sottosistemi ai processori e ai componenti  
+
+### Selezionare una configurazione hardware e una piattaforma
 
 Molti sistemi girano su più di una macchina e dipendono dall'accesso a una rete intranet o alla rete Internet.  
 
@@ -453,24 +465,24 @@ L'utilizzo di più computer può affrontare le esigenze di alte prestazioni e co
 
 Selezionare una configurazione hardware include anche la selezione di una macchina virtuale su cui il sistema dovrebbe essere costruito. Tale macchina virtuale include il sistema operativo e tutte le componenti software necessarie, come un DBMS, ad esempio. La selezione di una macchina virtuale riduce la distanza tra il sistema e la piattaforma hardware sul quale verrà eseguito. Più funzionalità sono offerte dalle componenti, meno sforzo di sviluppo verrà richiesto. La scelta di una VM pul, tuttavia, essere vincolata dal committente (che ha già acquistato l'hardware prima della partenza del progetto) oppure dai costi (è difficile stimare se costruire una componente sia più economico di comprarne una off-the-shelf).  
 
-#### Allocare oggetti e sottosistemi ai nodi  
+### Allocare oggetti e sottosistemi ai nodi  
 
 Una volta definita la configurazione hardware e le macchine virtuali, occorre assegnare gli oggetti e i sottosistemi ai nodi. Tale attività spesso porta all'identificazione di nuovi oggetti e sottosistemi addetti al trasporto di dati tra i nodi.  
 
 In generale, allocare sottosistemi ai nodi hardware ci consente di distruibre funzionalità e potenza di calcolo dove è più necessario. Purtroppo, questo introduce anche problematiche legate alla memorizzazione, al trasferimento, al replicare e al sicnronizzare i dati tra i sottosistemi.  
 
-### Identificare e memorizzare i dati persistenti  
+## Identificare e memorizzare i dati persistenti  
 
 I **dati persistenti** "vivono più a lungo" del tempo di esecuzione del sistema.  
 
 *Dove* e *come* sono memorizzati i dati costituiscono una questione che influenza la decomposizione in sottositemi. In alcuni casi, ad esempio, in uno stile architetturale di tipo *Repository*, un sottosistema può essere completamente dedicato alla memorizzazione dei dati. La selezione si uno specifico DBMS può anche avere implicazioni sulle strategie di controllo e gestione della concorrenza.  
 
-#### Identificare gli oggetti persistenti  
+### Identificare gli oggetti persistenti  
 
 Come prima cosa occorre identificare quali dati devono essere persistenti.  
 Gli oggetti *entity* identificati durante la fase di analisi sono ovvi candidati per la persistenza. Non tutti gli *entity* object, tuttavia, devono essere persistenti (Alcuni oggetti sono calcolati al momento, ad esempio). I candidati alla persistenza sono anche altri e possono includere ad esempio informazioni riguardanti gli oggetti *boundary* (preferenze utente sulla GUI, ad esempio) o altro. In generale, è possibile identificare gli oggetti persistenti esaminando le classi che sopravvivono a un shutdown (volontario o no) di sistema.  
 
-#### Selezionare una strategie per la gestione dellos torage  
+### Selezionare una strategie per la gestione dellos torage  
 
 Una volta identificati gli oggetti persistenti, occorre decidere come tali oggetti saranno memorizzati. La decisione della gestione dello storage è molto complessa ed è solitamente dettata dai requistii non funzionali: *Gli oggetti devono essere ritrovati velocemente?* *Il sistema deve eseguire query complesse per ritrovare gli oggetti?* *Gli oggetti richiedono molta memoria?*.  
 
@@ -482,8 +494,10 @@ In generale vi sono 3 opzioni per la gestione dello storage:
 * *Object-oriented database*. Un database orientato agli oggetti fornisce servizi simili ad un database relazionale. A differenza di un DB relazionale, i dati sono memorizzati come oggetti e relative associazioni, aggiungendo quindi un ulteriore livello di astrazione (rimuovendo la necessità del mapping tabella-oggetto) e introducendo il concetto dell'ereditarietà. I database OO sono tipicamente più lenti dei DB relazionali (specialmente per query complesse) e risultano più difficili da ottimizzare.  
 
 
-![](../../assets/img//tradeoffstorage.png)  
-### Fornire controllo agli accessi  
+![](../../assets/img//tradeoffstorage.png)
+
+
+## Fornire controllo agli accessi  
 
 In sistemi multi-utente, diversi attori hanno accesso a diversi dati e funzionalità. Durante l'analisi, abbiamo modellato queste distinzioni associando diversi casi d'uso a diversi attori. Durante il system design, modelliamo gli accessi determinando quali oggetti sono condivisi tra gli attori e definendo come gli attori controllano l'accesso.  
 
@@ -492,7 +506,8 @@ A seconda dei requisiti di seicurezza del sistema, definiamo anche come gli atto
 In generale, occorre definire per ogni attore a quali operazioni egli può accedere su ogni oggetto condiviso. Gli accessi alle classi sono modellati con una *matrice degli accessi*: le righe della matrice rappresentano gli attori del sistema, le colonne rappresentano le classi di cui controlliamo gli accessi. Una entry ``(class, actor)`` nella matrice è chiamata **access right** ed elenca le operazioni che possono essere eseguite su istanze della classe specificata dall'attore specificato.  
 
 
-![](../../assets/img//matrix.png)  
+![](../../assets/img//matrix.png)
+
 È possibile rappresentare la matrice degli accessi seguendo tre approcci differenti:  
 
 * **Global access table** rappresenta esplicitamente ogni cella come una tupla ``(actor, class, operation)``.
@@ -505,7 +520,7 @@ TODO PAG 271 E 272 (Nelle slide compaiono?)
 ANCHE 273 E 274. (Importanti: proxy, autenticazione e cifratura)  
 
 
-### Progettare il flusso di controllo globale  
+## Progettare il flusso di controllo globale  
 
 Il **Control flow** è il sequenziamento delle azioni in un sistema. In sistemi orientati agli oggetti, il sequenziamento delle azioni include la decisione di quali operazioni dovrebbero essere eseguite e in che ordine. Tali decisioni sono basate su eventi esterni generati da un attore o dal passaggio del tempo.  
 
@@ -528,7 +543,7 @@ Una volta scelto il meccanismo per il controllo di flusso, possiamo realizzarlo 
 
 Localizzare le decisioni per il flusso di controlo per uno use case in un singolo oggetto risulta in codice più comprensibile e più resiliente a cambi nei requisiti.  
 
-### Identificare i servizi  
+## Identificare i servizi  
 
 In questa attività, si raffina la decomposizione in sottosistemi e si definiscono le interfacce per ogni servizio indentificato. Le interfacce sono raffigurate usando la notazione *UML socket and balls*. Vengono revisionate le dipendenze tra i sottosistemi e per ciascuna di esse viene definita un'interfaccia.  
 
@@ -540,7 +555,7 @@ Le operazioni fornite dai servizi dovrebbero essere verbi in *camelCase*. Gli at
 
 Una volta revisionate le dipendenze tra i sottosistemi e identificati i servizi corrispondenti, abbiamo una chiara visione delle responsabilità dei sottosistemi.  
 
-### Identificare condizioni limite  
+## Identificare condizioni limite  
 
 
 Occorre adesso esaminare le **condizioni limite** del sistema: ossia, occorre decidere come il sistema viene avviato, inizializzato e spento, e occorre definire come vengono affrontati situazioni di *major failure* come una corruzione dei dati o malfunzionamenti di rete, sia che questi siano causati da errori software che dalla mancanza di corrente elettrica.  
@@ -568,7 +583,7 @@ Quando si identificano le condizioni boundary, gli sviluppatori esaminano ogni f
 Sviluppare sistemi affidabili è un compito arduo. Spesso, sacrificare alcune funzionalità può rendere la progettazione più facile.  
 
 
-## Gestire il system design
+# Gestire il system design
 
 ### Documentare il system design: System Design Document 
 
@@ -610,7 +625,6 @@ Il numero di sottositemi determina la grandezza del team di architetti. Per sist
 
 ### Comunicare riguardo il system design  
 
-
 Le cause della difficoltà nel comunicare durante la fase di system design sono le seguenti:  
 
 * *Numero di problemi*: il numero di problemi aumenta quando gli sviluppatori cominciano la progettazione.
@@ -639,21 +653,4 @@ Distinguiamo tre tipologie di iterazioni durante il system design:
 * Revisioni alle interfacce
   + Iterazioni di questo tipo mirano a risolvere alcune questioni che solitamente riguardano la scelta di uno specifico vendor o di una specifica tecnologia. In circostanze del genere, la decomposizione è stabile.
 * Errori e sviste nella progettazione  
-  + Iterazioni di questo tipo rimediano a problemi di design scoperti più avanti nella fase di progettazione. Problematiche di questo tipo dovrebbero essere evitate il più possibile  
-
-
-
-
-
-
-
-## bzbzbbzbz
-Il system design è costituito dalle seguenti attività:  
-
-* **Identificare gli obiettivi di design**
-  + Gli sviluppatori identificano quali caratteristiche di qualità dovrebbero essere ottimizzate e definiscono le priorità di tali caratteristiche
-* **Progettazione della decomposizione del sistema in sottosistemi**
- + Basandosi sugli use case e i modelli di analisi, gli sviluppatori decompongono il sistema in parti più piccole. Utilizzano stili architetturali standard
-* **Raffinare la decomposizione in sottosistemi per rispettare gli obiettivi di design**
-  + La decomposizione iniziale di solito non soddisfa gli obiettivi di design. Gli sviluppatori la raffinano finchè gli obiettivi non sono soddisfatti  
-
+  + Iterazioni di questo tipo rimediano a problemi di design scoperti più avanti nella fase di progettazione. Problematiche di questo tipo dovrebbero essere evitate il più possibile
