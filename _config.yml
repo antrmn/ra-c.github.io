@@ -102,14 +102,33 @@ disqus:
     ## Disabled for NotesGarden Theme. 
     shortname: 
 
-markdown: kramdown
+markdown: pandoc
 
-kramdown:
-  input: GFM
-  hard_wrap: false
-  math_engine: katex
-  smart_quotes: ["apos", "apos", "quot", "quot"]
-  syntax_highlighter: rouge
+
+pandoc:
+    skip:
+      full: false
+      posts: false
+      categories: false
+    bundle_permalink: ':output_ext/:slug.:output_ext'
+    papersize: 'a5paper'
+    sheetsize: 'a4paper'
+    imposition: true
+    binder: true
+    covers_dir: assets/covers
+    signature: 20
+    full_file: true
+
+    flags: '--smart'
+    site_flags: '--toc'
+    outputs:
+      latex:
+      pdf: '--latex-engine=xelatex'
+      epub: '--epub-chapter-level=2'
+    lang:
+      ar:
+        all: '-V mainfont="Amiri"'
+        pdf: '--include-in-header=_layouts/rtl.tex'
   
 sass:
   style: compressed
