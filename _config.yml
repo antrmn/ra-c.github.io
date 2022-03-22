@@ -89,6 +89,7 @@ plugins:
   - jekyll-feed 
   - jekyll-sitemap 
   - jekyll-tidy
+  - jekyll-pandoc-multiple-formats
 
 ## Enable _notes Collection 
 collections:
